@@ -7,8 +7,9 @@
     <title>Home | Simple Project</title>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/responsive.css">
+    <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
     <div class="area">
         <!-- Header Start Here -->
         <div class="header fix">
@@ -90,5 +91,6 @@
         </div>
         <!-- Footer End Here -->
     </div>
+    <?php wp_footer(); ?>
 </body>
 </html>
