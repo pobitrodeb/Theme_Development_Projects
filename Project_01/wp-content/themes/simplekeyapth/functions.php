@@ -4,7 +4,7 @@ function simplekeyapth_setup(){
     
     register_nav_menus( array( 
         'main-menu' => 'Main Menu', 
-        'footer-menu' => 'Main Menu', 
+        'footer-menu' => 'Footer Menu', 
      ));
 
   
