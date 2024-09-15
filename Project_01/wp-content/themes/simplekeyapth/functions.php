@@ -1,14 +1,12 @@
 <?php 
     load_theme_textdomain('simplekeyapth');
-function simplekeyapth_setup(){
-    
+
+function simplekeyapth_setup(){ 
     register_nav_menus( array( 
-        'main-menu' => 'Main Menu', 
-        'footer-menu' => 'Footer Menu', 
+        'main-menu' => __('Main Menu', 'simplekeyapth'), 
+        'footer-menu' => __('Footer Menu', 'simplekeyapth'), 
+        'sidebar-menu' => __('Sidebar Menu', 'simplekeyapth'), 
      ));
-
-  
-
 
 }
 add_action('after_setup_theme', 'simplekeyapth_setup');
