@@ -1,6 +1,12 @@
 <?php 
+
+    /*****Language Support *****/
     load_theme_textdomain('simplekeyapth');
 
+    /***** Title *****/
+    add_theme_support('title-tag'); 
+
+    /*****Navabar Support *****/
 function simplekeyapth_setup(){ 
     register_nav_menus( array( 
         'main-menu' => __('Main Menu', 'simplekeyapth'), 
