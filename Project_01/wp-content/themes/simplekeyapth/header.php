@@ -12,7 +12,7 @@
         <!-- Header Start Here -->
         <div class="header fix">
             <div class="logo">
-                <a href="index.php">
+                <a href="<?php echo site_url(); ?>">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="Logo">
                 </a>
             </div>
