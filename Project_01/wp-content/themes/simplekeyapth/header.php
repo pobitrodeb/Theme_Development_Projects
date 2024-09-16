@@ -18,7 +18,10 @@
             </div>
             <div class="menu">
                 <?php wp_nav_menu(array(
-                    'theme_location' => 'main-menu'
+                    'theme_location'    => 'main-menu',
+                    'container-class'   => 'main-menu-container-classs', 
+                    'menu-class'        => 'main-menu-class', 
+                    'menu-id'           => 'main-menu-id', 
                 )); ?>
             </div>
         </div>
