@@ -1,5 +1,7 @@
 <?php 
 
+function simplekeyapth_setup(){ 
+
     /*****Language Support *****/
     load_theme_textdomain('simplekeyapth');
 
@@ -7,7 +9,6 @@
     add_theme_support('title-tag'); 
 
     /*****Navabar Support *****/
-function simplekeyapth_setup(){ 
     register_nav_menus( array( 
         'main-menu' => __('Main Menu', 'simplekeyapth'), 
         'footer-menu' => __('Footer Menu', 'simplekeyapth'), 
