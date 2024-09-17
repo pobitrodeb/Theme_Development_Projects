@@ -4,5 +4,5 @@
     <?php get_template_part('template-parts/content', 'services'); ?> 
     <?php get_template_part('template-parts/content', 'about')?>
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
   
