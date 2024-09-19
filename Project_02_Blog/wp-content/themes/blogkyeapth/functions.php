@@ -3,7 +3,9 @@
 function blogkeyapth_setup(){
 
    load_theme_textdomain('blogkeyapth');
-
+    
+   // Title dynamic 
+   add_theme_support('title-tag'); 
 
    //Menu Register 
    register_nav_menus(array(

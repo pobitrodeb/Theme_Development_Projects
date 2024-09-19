@@ -22,16 +22,9 @@ get_header() ?>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum architecto quaerat praesentium impedit. Aut libero, magnam non totam consectetur velit reprehenderit soluta officiis minima tempora.</p>
             </div>
             <div class="about-menu">
-                <div class="single-sidebar">
-                    <h4>Latest Posts</h4>
-                    <ul>
-                        <li><a href="">Post Title</a></li>
-                        <li><a href="">Post Title</a></li>
-                        <li><a href="">Post Title</a></li>
-                        <li><a href="">Post Title</a></li>
-                        <li><a href="">Post Title</a></li>
-                    </ul>
-                </div>
+                <?php 
+                    dynamic_sidebar('sidebar-1');
+                ?>
             </div>
         </div>
         <!-- About End Here -->
