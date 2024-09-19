@@ -2,13 +2,16 @@
 
 function blogkeyapth_setup(){
 
+   load_theme_textdomain('blogkeyapth');
+
+
+   //Menu Register 
    register_nav_menus(array(
-    'main-menu' => 'Main Menu', 
-    'footer-menu' => 'Footer Menu', 
+    'main-menu' => __('Main Menu', 'blogkeyapth'), 
+    'footer-menu' => __('Footer Menu', 'blogkeyapth'), 
    ));
 
 }
-
 add_action('after_setup_theme', 'blogkeyapth_setup');
 
 
@@ -29,3 +32,20 @@ function blogkeyapth_scripts(){
     
 }
 add_action('wp_enqueue_scripts', 'blogkeyapth_scripts');
+
+
+//Register Sidebar 
+function blogkeyapth_widgets(){
+   register_sidebar(array(
+      'name' => __('Main Sidebar', 'blogkeyapth'), 
+      'id'   =>  __('sidebar-1'), 
+      'description' => __('Our main sidebar', 'blogkeyapth'), 
+      'before-widget' => '<div class="blog-sidebar">', 
+      'after-widget'  => '</div>', 
+      'before-title'  => '<h3>', 
+      'after-title'   => '</h3>'
+
+   ));
+
+}
+add_action('widgets_init', 'blogkeyapth_widgets');
