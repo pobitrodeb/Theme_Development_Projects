@@ -1,4 +1,21 @@
 <?php 
+
+function biztrox_setup(){
+
+    load_theme_textdomain('biztrox'); 
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+
+    //Regsiter Navbar 
+    register_nav_menus( array(
+        'primary_menu' => __( 'Primary Menu', 'text_domain' ),
+        'footer_menu'  => __( 'Footer Menu', 'text_domain' ),
+        
+    ) );
+
+}
+add_action('after_setup_theme', 'biztrox_setup');
+
 function biztrox_scripts(){
     // <!-- Bootstrap -->
     wp_enqueue_style('bootstrap',  get_template_directory_uri() . '/plugins/bootstrap/bootstrap.min.css', array(), '1.0.0', 'all');
@@ -28,3 +45,6 @@ function biztrox_scripts(){
 
 }
 add_action('wp_enqueue_scripts', 'biztrox_scripts');
+
+
+// ================= Navbar ====================  
