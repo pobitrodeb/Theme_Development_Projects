@@ -10,7 +10,7 @@
                     <img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php the_title()?>"> 
                      <!-- <?php echo the_post_thumbnail(); ?>  -->
                     <div class="blog-meta">
-                        <a href=""><?php the_author()?> </a><a href=""><?php the_date('M-Y'); ?></a><a href=""><?php the_category(); ?></a>
+                        <a href=""><?php the_author_posts_link(); ?> </a><a href=""><?php the_date('M-Y'); ?></a><a href=""><?php the_category(); ?></a>
                     </div>
                     <p><?php the_excerpt(); ?> </p>
                     <a href="">read more</a>
