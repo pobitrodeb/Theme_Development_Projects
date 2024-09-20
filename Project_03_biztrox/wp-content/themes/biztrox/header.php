@@ -10,23 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/plugins/bootstrap/bootstrap.min.css">
-  <!-- magnific popup -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/plugins/magnific-popup/magnific-popup.css">
-  <!-- Slick Carousel -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/plugins/slick/slick.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/plugins/slick/slick-theme.css">
-  <!-- themify icon -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/plugins/themify-icons/themify-icons.css">
-  <!-- animate -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/plugins/animate/animate.css">
-  <!-- Aos -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/plugins/aos/aos.css">
-  <!-- swiper -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/plugins/swiper/swiper.min.css">
-  <!-- Stylesheets -->
-  <link href="<?php echo get_template_directory_uri();?>/css/style.css" rel="stylesheet">
+
   
   <!--Favicon-->
   <link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/images/favicon.png" type="image/x-icon">

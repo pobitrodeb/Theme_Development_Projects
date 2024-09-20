@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-    <div class="hero-slider-item py-160" style="background-image: url(images/banner/banner-4.jpg);"
+    <div class="hero-slider-item py-160" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/banner/banner-4.jpg);"
       data-icon="ti-package" data-text="Human Resources">
       <div class="container">
         <div class="row">
