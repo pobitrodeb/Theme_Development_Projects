@@ -3,6 +3,7 @@
 function xenon_customizer($wp_customize){
     $wp_customize -> add_section('bannar_section', array(
         'title' => __('Bannar Section', 'xenon'),
+        'priority' => 10,
     ));
 
     $wp_customize -> add_setting('bannar_heading', array(
