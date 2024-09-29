@@ -33,7 +33,7 @@
             <div class="row h-100 align-items-center">
                <div class="col-xl-10 mx-auto">
                   <div class="welcome-content">
-                     <h4>I Am <span>xenon doe</span></h4>
+                     <h4><?php echo get_theme_mod('bannar_heading'); ?></h4>
                      <ul>
                      	<li>developer</li>
                      	<li>-</li>
