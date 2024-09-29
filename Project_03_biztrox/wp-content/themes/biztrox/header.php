@@ -28,4 +28,4 @@
 <!-- preloader end -->
 
 <?php get_template_part('template-parts/content', 'header'); ?> 
-<?php get_template_part('template-parts/content', 'slider'); ?> 
+
