@@ -35,11 +35,8 @@
                   <div class="welcome-content">
                      <h4><?php echo get_theme_mod('bannar_heading'); ?></h4>
                      <ul>
-                     	<li>developer</li>
-                     	<li>-</li>
-                     	<li>freelancer</li>
-                     	<li>-</li>
-                     	<li>photographer</li>
+                     	<li><?php echo get_theme_mod('bannar_desc'); ?></li>
+                     	
                      </ul>
 					 <a href="" class="box-btn">contact me</a>
                   </div>
