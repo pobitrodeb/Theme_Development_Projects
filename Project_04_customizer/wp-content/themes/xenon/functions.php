@@ -1,6 +1,8 @@
 
 <?php 
 
+require_once(get_theme_file_path('/inc/xenon-customize.php'));
+
 /**
  * Theme Essential Support
  */
