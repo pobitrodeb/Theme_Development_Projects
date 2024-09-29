@@ -38,7 +38,7 @@
                      	<li><?php echo get_theme_mod('bannar_desc'); ?></li>
                      	
                      </ul>
-					 <a href="" class="box-btn">contact me</a>
+					   <a href="<?php echo get_theme_mod('bannar_btn_link'); ?>" class="box-btn"><?php echo get_theme_mod('bannar_btn_text') ?></a>
                   </div>
                </div>
             </div>
