@@ -60,3 +60,12 @@ add_action('after_setup_theme', 'xenon_essential_support');
       wp_enqueue_script( 'main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', 'all' );
  }
  add_action('wp_enqueue_scripts', 'xenon_load_scripts');
+
+
+
+
+ function xenon_live_preview(){
+    wp_enqueue_scripts('live-js', get_template_directory_uri().'./assets/js/customize.js', array('customize-preview'), '', true); 
+
+ }
+ add_action('customize_preview_init', 'xenon_live_preview'); 

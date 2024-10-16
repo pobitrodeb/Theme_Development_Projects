@@ -7,7 +7,8 @@ function xenon_customizer($wp_customize){
     ));
 
     $wp_customize -> add_setting('bannar_heading', array(
-        'default' => __('I Am xenon doe', 'xenon'),
+        'default'       => __('I Am xenon doe', 'xenon'),
+        'transport'     => 'postMessage',      
     ));
 
     $wp_customize -> add_control('banner_heading_ctrl', array(
@@ -20,6 +21,7 @@ function xenon_customizer($wp_customize){
     /* Bannar Description Setting  */
     $wp_customize -> add_setting('bannar_desc', array(
         'default' => __('developer - freelancer - photographer', 'xenon'),
+        'transport'     => 'postMessage',      
     ));
 
     /* Bannar Description Control */
