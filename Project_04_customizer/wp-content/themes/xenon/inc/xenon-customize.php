@@ -68,7 +68,13 @@ function xenon_customizer($wp_customize){
             'banner_image_ctrl', array (
                 'label'             => __('Upload Image', 'xenon'), 
                 'section'           => 'bannar_section', 
-                'settings'           => 'banner_image', 
+                'settings'          => 'banner_image', 
+                'button_labels'      => array (
+                    'select'        => 'Select Background Image', 
+                    'remove'        => 'Remove Back Image', 
+                    'change'        => 'Change', 
+
+                )
             )
         )
     );
