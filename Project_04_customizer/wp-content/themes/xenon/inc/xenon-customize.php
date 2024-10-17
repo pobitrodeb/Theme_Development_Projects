@@ -73,11 +73,29 @@ function xenon_customizer($wp_customize){
                     'select'        => 'Select Background Image', 
                     'remove'        => 'Remove Back Image', 
                     'change'        => 'Change', 
-
                 )
             )
         )
     );
+
+      /* Heading Checkbox Control Section*/
+    $wp_customize->add_section('control_section', array(
+        'title'         => __('Control Section', 'xenon'), 
+        'priority'      => 20 
+    ));
+
+    $wp_customize->add_setting('controls_checkbox', array(
+        'default'           => 1, 
+        'transport'         => 'refresh' 
+    ));
+
+    $wp_customize->add_control('controls_checkbox_ctrl', array(
+        'label'             => __('Show Banner Heading', 'xenon'),
+        'type'              => 'checkbox', 
+        'settings'          => 'controls_checkbox', 
+        'section'           => 'control_section'
+
+    )); 
 
 }
 

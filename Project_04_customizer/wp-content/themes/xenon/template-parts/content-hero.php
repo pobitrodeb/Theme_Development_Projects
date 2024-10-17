@@ -33,7 +33,14 @@
             <div class="row h-100 align-items-center">
                <div class="col-xl-10 mx-auto">
                   <div class="welcome-content">
-                     <h4><?php echo get_theme_mod('bannar_heading'); ?></h4>
+                     <?php 
+                        if(get_theme_mod('controls_checkbox')){
+                           ?>
+                           <h4><?php echo get_theme_mod('bannar_heading'); ?></h4>
+                           <?php
+                        }
+                     ?>
+
                      <ul>
                      	<li><?php echo get_theme_mod('bannar_desc'); ?></li>
                      	
