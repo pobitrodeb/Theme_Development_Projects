@@ -5,15 +5,22 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="about-img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/me.jpg" alt="" />
+						<!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/img/me.jpg" alt="" /> -->
+						<?php
+							$about_image_url = get_theme_mod('about_photo_image'); 
+							
+							if($about_image_url){
+								echo '<img src="' . esc_url($about_image_url) . '" alt="About Banner" />';
+							}
+							
+						?>
 					</div>
 				</div>
 				<div class="col-md-8">
 					<div class="about-desc">
-						<h3>xenon doe</h3>
-						<h4>professional web developer</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+						<h3> <?php echo get_theme_mod('about_section_title') ?> </h3>
+						<h4><?php echo get_theme_mod('about_sub_title') ?> </h4>
+						<p><?php echo get_theme_mod('about_details') ?></p>
 						<ul>
 							<li><i class="fa fa-angle-double-right"></i> bootstrap development</li>
 							<li><i class="fa fa-angle-double-right"></i> email marketing</li>

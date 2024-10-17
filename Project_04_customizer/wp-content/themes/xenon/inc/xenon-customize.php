@@ -153,6 +153,105 @@ function xenon_customizer($wp_customize){
          'section'      => 'control_section'   
     ));
 
+    /* About Section  */
+    $wp_customize->add_section('about_section', array(
+        'title' => __('About Section', 'xenon'), 
+        'trasport' => 'refresh', 
+    ));
+
+    $wp_customize->add_setting('about_section_title', array(
+        'title' => __('Write About Section Title', 'xenon'), 
+        'default' => __('Xenon Doe', 'xenon'), 
+        'trasport' => 'refresh'
+    ));
+
+    $wp_customize->add_control('about_section_title_ctrl', array(
+        'label'     => __('Write About Section Title', 'xenon'), 
+        'type'      => 'text', 
+        'settings'  => 'about_section_title', 
+        'section'   => 'about_section'
+    ));
+
+    $wp_customize->selective_refresh->add_partial('about_selective_title', array(
+        'selector'          => '.about-desc h3', 
+        'settings'          => 'about_section_title', 
+        'section'           => 'about_section', 
+        'render_callback'   => function(){
+            return get_theme_mod('about_section_title');
+        }
+    ));
+
+    $wp_customize->add_setting('about_sub_title', array(
+        'title'         => __('Write About Sub Title', 'xenon'), 
+        'default'       => __('Professional Web Developer', 'xenon'), 
+        'transport'     => 'refresh'
+    )); 
+
+    $wp_customize->add_control('about_sub_title_ctrl', array(
+        'label'         => __('Write About Section Sub Title'), 
+        'type'          => 'text', 
+        'settings'       => 'about_sub_title', 
+        'section'       => 'about_section'
+    )); 
+
+    $wp_customize->selective_refresh->add_partial('about_sub_selective', array(
+        'selector'          => '.about-desc h4', 
+        'settings'          => 'about_sub_title', 
+        'section'           => 'about_section', 
+        'render_callback'   => function(){
+            return get_theme_mod('about_sub_title');
+        }
+    )); 
+
+    $wp_customize->add_setting('about_details', array(
+        'title' => __('About Details', 'xenon'), 
+        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'xenon'),
+        'trasport' => 'refresh', 
+    )); 
+
+    $wp_customize->add_control('about_details_ctrl', array(
+        'label'         => __('Write About Section Details', 'xenon'), 
+        'type'          => 'textarea', 
+        'settings'      => 'about_details', 
+        'section'       => 'about_section'
+    ));
+
+    $wp_customize->selective_refresh->add_partial('about_details_selective', array(
+        'selector'      => __('.about-desc p'), 
+        'settings'      => 'about_details', 
+        'section'       => 'about_section', 
+        'render_callback' => function(){
+            return get_theme_mod('about_deatils'); 
+        }
+    ));
+
+    $wp_customize->add_setting('about_photo_image', array(
+        'transport'     => 'refresh', 
+    )); 
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 
+        'about_banner_image_ctrl', array(
+            'label'     => __('Upload Your Photo'), 
+            'settings'      => 'about_photo_image', 
+            'section'       => 'about_section', 
+            'button_labels' => array(
+                'select'    => 'Select Your Photo', 
+                'remove'    => 'Remove Your Photo', 
+                'change'    => 'Change Your Photo'
+            )
+        )
+    )); 
+
+    
+    $wp_customize->selective_refresh->add_partial('about_photo_selective', array(
+        'selector'      => __('.about-img'), 
+        'settings'      => 'about_photo_image', 
+        'section'       => 'about_section', 
+        'render_callback' => function(){
+            return get_theme_mod('about_photo_image'); 
+        }
+    ));
+
 }
 
 add_action('customize_register', 'xenon_customizer');
