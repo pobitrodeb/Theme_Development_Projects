@@ -17,6 +17,15 @@ function xenon_customizer($wp_customize){
         'settings'  =>  'bannar_heading', 
         'section'   =>   'bannar_section'
     ));
+    
+    $wp_customize -> selective_refresh-> add_partial('banner_heading_selective', array(
+        'selector'  => '.welcome-content h4', 
+        'settings'  =>  'bannar_heading', 
+        'section'   =>   'bannar_section', 
+        'render_callback'   => function(){
+            return get_theme_mod('banner_heading'); 
+        }
+    ));
 
     /* Bannar Description Setting  */
     $wp_customize -> add_setting('bannar_desc', array(
@@ -30,6 +39,15 @@ function xenon_customizer($wp_customize){
         'type'      =>  'text', 
         'settings'  =>  'bannar_desc', 
         'section'   =>   'bannar_section'
+    ));
+
+    $wp_customize -> selective_refresh->add_partial('banner_desc_selective', array(
+        'selector'  => '.welcome-content li', 
+        'settings'  => 'bannar_desc', 
+        'section'   => 'bannar_section', 
+        'render_callback'   => function(){
+            return get_theme_mod('banner_desc'); 
+        }
     ));
 
 
