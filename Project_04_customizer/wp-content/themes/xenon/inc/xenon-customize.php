@@ -116,6 +116,25 @@ function xenon_customizer($wp_customize){
         'section'        => 'control_section' 
     ));
 
+    /* Projects Column Control Section*/
+    $wp_customize->add_setting('project_column_box', array(
+        'title'         => __('Project Column Box', 'xenon'), 
+        'default'       => 'col-lg-4', 
+        'transport'     => 'refresh'    
+    )); 
+    $wp_customize->add_control('project_column_box_ctrl', array(
+         'label'        => __('Show Project Column Box', 'xenon'), 
+         'type'         => 'select', 
+         'choices'      => array(
+            'col-lg-2'       => __('6 Columns', 'xenon'),
+            'col-lg-3'       => __('4 Columns', 'xenon'),
+            'col-lg-4'       => __('3 Columns', 'xenon'),
+            'col-lg-6'       => __('2 Columns', 'xenon'),
+         ), 
+         'settings'     => 'project_column_box', 
+         'section'      => 'control_section'   
+    ));
+
 }
 
 add_action('customize_register', 'xenon_customizer');

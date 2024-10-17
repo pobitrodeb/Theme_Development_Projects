@@ -12,7 +12,7 @@
 				</div>
 			</div>
             <div class="row grid no-gutters">
-               <div class="col-md-4">
+               <div class="<?php echo get_theme_mod('project_column_box') ?>">
                   <div class="single-portfolio">
                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/projects/1.jpg" alt="">
                      <div class="portfolio-hover">
@@ -22,7 +22,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-4">
+               <div class="<?php echo get_theme_mod('project_column_box') ?>">
                   <div class="single-portfolio">
                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/projects/2.jpg" alt="">
                      <div class="portfolio-hover">
@@ -32,7 +32,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-4" >
+               <div class="<?php echo get_theme_mod('project_column_box') ?>" >
                   <div class="single-portfolio">
                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/projects/3.jpg" alt=""/>
                      <div class="portfolio-hover">
@@ -42,7 +42,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-4">
+               <div class="<?php echo get_theme_mod('project_column_box') ?>">
                   <div class="single-portfolio">
                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/projects/4.jpg" alt="">
                      <div class="portfolio-hover">
@@ -52,7 +52,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-4">
+               <div class="<?php echo get_theme_mod('project_column_box') ?>">
                   <div class="single-portfolio">
                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/projects/5.jpg" alt="">
                      <div class="portfolio-hover">
@@ -62,7 +62,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-4">
+               <div class="<?php echo get_theme_mod('project_column_box') ?>">
                   <div class="single-portfolio">
                      <img src="<?php echo get_template_directory_uri(); ?>/assets/img/projects/6.jpg" alt="">
                      <div class="portfolio-hover">
