@@ -59,6 +59,20 @@ function xenon_customizer($wp_customize){
         'section'   =>   'bannar_section'
     ));
 
+    /* Banner Image  */
+    $wp_customize->add_setting('banner_image', array(
+       'transport' => 'refresh'       
+    )); 
+
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 
+            'banner_image_ctrl', array (
+                'label'             => __('Upload Image', 'xenon'), 
+                'section'           => 'bannar_section', 
+                'settings'           => 'banner_image', 
+            )
+        )
+    );
+
 }
 
 add_action('customize_register', 'xenon_customizer');

@@ -28,7 +28,7 @@
       <!-- Header Area End -->
 
       <!-- Welcome Area Start -->
-      <section class="welcome-area" id="home">
+      <section class="welcome-area" id="home" style= "background-image: url('<?php echo get_theme_mod('banner_image'); ?>">
          <div class="container h-100">
             <div class="row h-100 align-items-center">
                <div class="col-xl-10 mx-auto">
@@ -39,6 +39,7 @@
                      	
                      </ul>
 					   <a href="<?php echo get_theme_mod('bannar_btn_link'); ?>" class="box-btn"><?php echo get_theme_mod('bannar_btn_text') ?></a>
+                  
                   </div>
                </div>
             </div>
