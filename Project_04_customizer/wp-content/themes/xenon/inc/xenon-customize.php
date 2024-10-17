@@ -78,7 +78,7 @@ function xenon_customizer($wp_customize){
         )
     );
 
-      /* Heading Checkbox Control Section*/
+    /* Heading Checkbox Control Section*/
     $wp_customize->add_section('control_section', array(
         'title'         => __('Control Section', 'xenon'), 
         'priority'      => 20 
@@ -96,6 +96,25 @@ function xenon_customizer($wp_customize){
         'section'           => 'control_section'
 
     )); 
+
+    /* Services Column Control Section*/
+    $wp_customize->add_setting('column_box', array(
+        'title'         => __('Column Box', 'xenon'), 
+        'default'       => 'col-lg-4',
+        'transport'     => 'refresh'
+    ));
+    $wp_customize->add_control('column_box_ctrl', array(
+        'label'         => __('Show Services Column Box', 'xenon'), 
+        'type'          => 'radio', 
+        'choices'       => array(
+            'col-lg-2'       => __('6 Columns', 'xenon'),
+            'col-lg-3'       => __('4 Columns', 'xenon'),
+            'col-lg-4'       => __('3 Columns', 'xenon'),
+            'col-lg-6'       => __('2 Columns', 'xenon'),
+        ), 
+        'settings'       => 'column_box' , 
+        'section'        => 'control_section' 
+    ));
 
 }
 

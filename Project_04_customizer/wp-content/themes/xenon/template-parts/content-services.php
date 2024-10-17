@@ -10,42 +10,42 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-md-6">
+				<div class="<?php echo get_theme_mod('column_box'); ?>">
 					<div class="single-service">
 						<i class="fa fa-dribbble"></i>
 						<h4>design</h4>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi. </p>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
+				<div class="<?php echo get_theme_mod('column_box'); ?>">
 					<div class="single-service">
 						<i class="fa fa-code"></i>
 						<h4>development</h4>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi. </p>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
+				<div class="<?php echo get_theme_mod('column_box'); ?>">
 					<div class="single-service">
 						<i class="fa fa-clone"></i>
 						<h4>branding</h4>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi. </p>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
+				<div class="<?php echo get_theme_mod('column_box'); ?>">
 					<div class="single-service">
 						<i class="fa fa-rocket"></i>
 						<h4>database</h4>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi. </p>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
+				<div class="<?php echo get_theme_mod('column_box'); ?>">
 					<div class="single-service">
 						<i class="fa fa-camera"></i>
 						<h4>app</h4>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quaerat fugit quas veniam perferendis repudiandae sequi. </p>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6">
+				<div class="<?php echo get_theme_mod('column_box'); ?>">
 					<div class="single-service">
 						<i class="fa fa-clock-o"></i>
 						<h4>support</h4>
