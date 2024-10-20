@@ -41,6 +41,19 @@
                     'desc'     => esc_html__( 'Example description.', 'simplekeyapth' ),
                     'subtitle' => esc_html__( 'Example subtitle.', 'simplekeyapth' ),
                 ),
-            )
-        ) 
-    );
+                
+                array(
+                    'id'       => 'opt-media',
+                    'type'     => 'media', 
+                    'url'      => true,
+                    'title'    => esc_html__('Upload Your Logo', 'simplekeyapth'),
+                    'desc'     => esc_html__('Basic media uploader with disabled URL input field.', 'simplekeyapth'),
+                    'subtitle' => esc_html__('Upload you logo', 'simplekeyapth'),
+                    'default'  => array(
+                        'url'      => get_template_directory_uri(). '/assets/img/logo.png'
+                    ) // Removed the trailing comma here
+                ),
+                 
+        )
+    ) 
+);
