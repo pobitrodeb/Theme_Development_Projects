@@ -61,6 +61,28 @@
                     'subtitle' => esc_html__('Create a new Gallery by selecting existing ', 'simplekeyapth'),
                     'desc'     => esc_html__('This is the description field, again good for additional info.', 'simplekeyapth'),
                 ),
+
+                // Typography  
+            array( 
+                'id'          => 'opt-typography',
+                'type'        => 'typography', 
+                'title'       => esc_html__('H1 Typography', 'simplekeyapth'),
+                'google'      => true, 
+                'font-backup' => true,
+                'color'       => false, 
+                'output'      => array('h1'),
+                'units'       =>'px',
+                'subtitle'    => esc_html__('Typography option with each property can be called individually.', 'simplekeyapth'),
+                'default'     => array(
+                  
+                    'font-style'  => '700', 
+                    'font-family' => 'Abel', 
+                    'google'      => true,
+                    'font-size'   => '33px', 
+                    'line-height' => '40'
+                ),
+            )
+                
         )
     ) 
 );

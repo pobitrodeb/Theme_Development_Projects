@@ -14,12 +14,6 @@
     </p>
     <img src="<?php echo $redux_demo['opt-media']['url']?> " alt="">
      
-    <pre> 
-        <?php 
-            echo print_r($redux_demo['opt-gallery']); 
-        ?>
-    </pre> 
-
     <?php 
         $gallery        = $redux_demo['opt-gallery']; 
         $gallerys       = explode (',', $gallery); 
