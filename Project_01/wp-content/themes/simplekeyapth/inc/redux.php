@@ -51,9 +51,16 @@
                     'subtitle' => esc_html__('Upload you logo', 'simplekeyapth'),
                     'default'  => array(
                         'url'      => get_template_directory_uri(). '/assets/img/logo.png'
-                    ) // Removed the trailing comma here
+                    ) 
                 ),
-                 
+
+                array(
+                    'id'       => 'opt-gallery',
+                    'type'     => 'gallery',  
+                    'title'    => esc_html__('Gallery', 'simplekeyapth'),
+                    'subtitle' => esc_html__('Create a new Gallery by selecting existing ', 'simplekeyapth'),
+                    'desc'     => esc_html__('This is the description field, again good for additional info.', 'simplekeyapth'),
+                ),
         )
     ) 
 );

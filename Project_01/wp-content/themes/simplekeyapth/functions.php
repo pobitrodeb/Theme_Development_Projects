@@ -17,7 +17,6 @@
             'footer-menu' => __('Footer Menu', 'simplekeyapth'), 
             'sidebar-menu' => __('Sidebar Menu', 'simplekeyapth'), 
         ));
-
     }
     add_action('after_setup_theme', 'simplekeyapth_setup');
 
