@@ -4,6 +4,7 @@
         <h4>exclusive services</h4>
     </div>
         <div class="service fix">
+           
                 <div class="single-service">
                     <h4>service title</h4>
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/service1.jpg" alt="Service 1">

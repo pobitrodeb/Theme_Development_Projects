@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title>Home | Simple Project</title> -->
     <?php wp_head(); ?>
+    <?php 
+        global $redux_demo; 
+    ?>
 </head>
 <body <?php body_class(); ?>>
     <div class="area">
