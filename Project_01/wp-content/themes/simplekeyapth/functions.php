@@ -53,3 +53,21 @@
     }
 
     add_action('widgets_init', 'simplekeyapth_widgets');
+
+
+  // Setting API 
+  function setting_api(){
+    
+        add_settings_field('copyright', 'Copyright', 'copyright_func', 'general'); 
+     
+
+        register_setting('general', 'copyright'); 
+    }
+    add_action('admin_init', 'setting_api'); 
+
+    function copyright_func(){
+        ?>
+        <input type="text" class="regular-text" name="copyright" value="<?php echo get_option('copyright'); ?> ">
+        <?php
+    }
+

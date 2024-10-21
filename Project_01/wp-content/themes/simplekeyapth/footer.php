@@ -1,6 +1,6 @@
         <!-- Footer Start Here -->
         <div class="footer">
-            <p>&copy; 2021 All rights reserved.</p>
+            <p> <?php echo get_option('copyright');  ?> </p>
         </div>
         <!-- Footer End Here -->
         </div>
