@@ -57,11 +57,13 @@
 
   // Setting API 
   function setting_api(){
-    
-        add_settings_field('copyright', 'Copyright', 'copyright_func', 'general'); 
+
+        add_settings_field('copyright', 'Copyright', 'copyright_func', 'general');
+        add_settings_field('copyright_desc', 'Copyright Short Description', 'copyright_desc_func', 'general'); 
      
 
-        register_setting('general', 'copyright'); 
+        register_setting('general', 'copyright');
+        register_setting('general', 'copyright_desc');
     }
     add_action('admin_init', 'setting_api'); 
 
@@ -71,3 +73,11 @@
         <?php
     }
 
+    function copyright_desc_func(){
+        ?> 
+        <textarea name="copyright_desc" cols="30" row="10" class="regular-text">
+            <?php echo get_option('copyright_desc'); ?> 
+        </textarea>
+        <?php
+    }
+ 
