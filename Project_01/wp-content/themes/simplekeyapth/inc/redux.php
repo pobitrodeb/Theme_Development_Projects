@@ -63,7 +63,7 @@
                 ),
 
                 // Typography  
-            array( 
+                array( 
                 'id'          => 'opt-typography',
                 'type'        => 'typography', 
                 'title'       => esc_html__('H1 Typography', 'simplekeyapth'),
@@ -80,8 +80,26 @@
                     'google'      => true,
                     'font-size'   => '33px', 
                     'line-height' => '40'
+                 ),
+                ), 
+                //Color 
+                array(
+                    'id'       => 'opt-bg-color',
+                    'type'     => 'color',
+                    'title'    => esc_html__('Body Background Color', 'simplekeyapth'), 
+                    'subtitle' => esc_html__('Pick a background color for the theme (default: #fff).', 'simplekeyapth'),
+                    'default'  => '#FFFFFF',
+                    'validate' => 'color',
                 ),
-            )
+                array(
+                    'id'       => 'opt-color',
+                    'type'     => 'color',
+                    'output'      => array('h1', 'h2', 'h4'),
+                    'title'    => esc_html__('Typography Background Color', 'simplekeyapth'), 
+                    'subtitle' => esc_html__('Pick a background color for the theme (default: #fff).', 'simplekeyapth'),
+                    'default'  => '#000000',
+                    'validate' => 'color',
+                ),
                 
         )
     ) 
