@@ -1,7 +1,16 @@
  <!-- Services Start Here -->
  <div class="services" id="services">
             <div class="title">
-                <h4>exclusive services</h4>
+                <h4 style="background-color: <?php global $redux_demo;  echo $redux_demo['opt-background']; ?>; "> 
+                    <?php
+                    global $redux_demo; 
+                        echo $redux_demo['opt-text'];  
+                    ?>
+                 </h4>
+                 <p>
+                    <?php echo $redux_demo['opt-content']; 
+                    ?>
+                 </p>
             </div>
             <div class="service fix">
                 <div class="single-service">

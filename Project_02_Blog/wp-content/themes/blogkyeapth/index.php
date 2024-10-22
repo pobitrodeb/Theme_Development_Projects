@@ -2,7 +2,9 @@
         <?php get_header(); ?> 
 
        <?php get_template_part('template-parts/content', 'banner'); ?> 
-       
+        <hr>
+        
+
        <?php get_template_part('template-parts/content', 'services'); ?> 
 
         <!-- Blog Start Here -->

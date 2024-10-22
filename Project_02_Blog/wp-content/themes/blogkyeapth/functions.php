@@ -1,5 +1,6 @@
 <?php 
 
+require_once(get_template_directory(). '/inc/redux.php');
 function blogkeyapth_setup(){
 
    load_theme_textdomain('blogkeyapth');
@@ -52,3 +53,4 @@ function blogkeyapth_widgets(){
 
 }
 add_action('widgets_init', 'blogkeyapth_widgets');
+
