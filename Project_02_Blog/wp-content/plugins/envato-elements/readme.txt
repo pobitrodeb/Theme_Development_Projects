@@ -4,7 +4,7 @@ Tags: elementor, elements, templates, template kit
 Requires at least: 4.6
 Tested up to: 6.4
 Requires PHP: 5.6
-Stable tag: 2.0.14
+Stable tag: 2.0.15
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -78,6 +78,9 @@ If you have any questions or feedback for the team, please send an email to exte
 
 
 == Changelog ==
+
+= 2.0.15 - 2024-10-11 =
+* Updated to fix the image URLs returned in search results
 
 = 2.0.14 - 2024-07-19 =
 * Updated compatibility tags for WordPress and Elementor
