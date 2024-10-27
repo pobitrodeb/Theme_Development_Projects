@@ -15,6 +15,7 @@
     $category = get_field('category');
     $tags     = get_field('tags'); 
     $colors   = get_field('color');
+    $vote    = get_field('vote'); 
 ?>
         <div class="content">
             <h1>
@@ -90,5 +91,7 @@
                 }
             ?>
              
+             <h1> This is ACF Radio Field </h1>
+           <p> Vote Result : <?php echo $vote; ?> </p>
        
         </div>
