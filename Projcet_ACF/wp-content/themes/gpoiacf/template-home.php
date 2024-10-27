@@ -40,6 +40,8 @@
                     }  
                 ?>
            </p>
+           <hr>
+            <h2> This Data get form Text Editor Content </h2>
            <p>
                 <?php
                     $content = get_field('write_content_'); 
