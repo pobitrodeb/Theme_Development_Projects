@@ -31,4 +31,13 @@
                 ?>
             </p>
             <?php echo $rang_select; ?> 
+
+           <p>
+            <?php 
+                    $email = get_field('email');
+                    if($email){
+                        echo $email; 
+                    }  
+                ?>
+           </p>
         </div>
