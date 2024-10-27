@@ -5,6 +5,7 @@
     get_header();
     $title = get_field('title');
     $description = get_field('description'); 
+    $price       = get_field('price'); 
 ?>
         <div class="content">
             <h1>
@@ -18,6 +19,13 @@
                 <?php
                     if($description){ 
                         echo $description; 
+                    }
+                ?>
+            </p>
+            <p>
+                <?php 
+                    if($price){
+                        echo $price; 
                     }
                 ?>
             </p>
