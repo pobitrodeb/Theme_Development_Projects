@@ -14,6 +14,7 @@
 
     $category = get_field('category');
     $tags     = get_field('tags'); 
+    $colors   = get_field('color');
 ?>
         <div class="content">
             <h1>
@@ -79,5 +80,15 @@
                 echo $tag['label'];
                }
            ?>
+
+            <h1> This is ACF Checkbox Field </h1>
+            <?php
+                foreach ($colors as $color){
+                    ?>
+                    <ul><?php echo $color['label'];  ?></ul>
+                    <?php
+                }
+            ?>
+             
        
         </div>
