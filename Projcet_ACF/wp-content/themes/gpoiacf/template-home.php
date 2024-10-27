@@ -6,6 +6,7 @@
     $title = get_field('title');
     $description = get_field('description'); 
     $price       = get_field('price'); 
+    $rang_select = get_field('rang_select'); 
 ?>
         <div class="content">
             <h1>
@@ -29,4 +30,5 @@
                     }
                 ?>
             </p>
+            <?php echo $rang_select; ?> 
         </div>
