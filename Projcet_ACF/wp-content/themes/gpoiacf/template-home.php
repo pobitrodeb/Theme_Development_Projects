@@ -15,7 +15,8 @@
     $category = get_field('category');
     $tags     = get_field('tags'); 
     $colors   = get_field('color');
-    $vote    = get_field('vote'); 
+    $vote    = get_field('vote');
+    $trueFalse = get_field('true_false_');
 ?>
         <div class="content">
             <h1>
@@ -91,7 +92,15 @@
                 }
             ?>
              
-             <h1> This is ACF Radio Field </h1>
+           <h1> This is ACF Radio Field </h1>
            <p> Vote Result : <?php echo $vote; ?> </p>
+
+                        
+           <h1> This is True/False Field </h1>
+                <?php 
+                    if($trueFalse){
+                        echo "Result is okay"; 
+                    }
+                ?>
        
         </div>
