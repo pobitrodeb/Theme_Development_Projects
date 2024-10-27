@@ -6,7 +6,11 @@
     $title = get_field('title');
     $description = get_field('description'); 
     $price       = get_field('price'); 
-    $rang_select = get_field('rang_select'); 
+    $rang_select = get_field('rang_select');
+    
+    $image      = get_field('upload_photo');  
+    $ulr        = $image['url']; 
+    $alt        = $image['alt']; 
 ?>
         <div class="content">
             <h1>
@@ -51,4 +55,15 @@
                     }
                 ?>
            </p>
+
+            <h1> This is ACF Image Field </h1>
+           <?php
+                if($image){
+                    ?>
+                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'];?>">
+                <?php
+                    }
+                ?>
+           ?>
+           
         </div>
