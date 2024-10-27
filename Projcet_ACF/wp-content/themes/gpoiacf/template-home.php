@@ -11,6 +11,9 @@
     $image      = get_field('upload_photo');  
     $ulr        = $image['url']; 
     $alt        = $image['alt']; 
+
+    $category = get_field('category');
+    $tags     = get_field('tags'); 
 ?>
         <div class="content">
             <h1>
@@ -65,5 +68,16 @@
                     }
                 ?>
            ?>
-           
+
+           <h1> This is ACF Select Field </h1>
+            
+           <h4> This category is: <?php echo $category["label"]; ?></h4>
+
+           <h1> This is ACF Multiple Select Field </h1>
+           <?php
+               foreach($tags as $tag){
+                echo $tag['label'];
+               }
+           ?>
+       
         </div>
