@@ -40,4 +40,13 @@
                     }  
                 ?>
            </p>
+           <p>
+                <?php
+                    $content = get_field('write_content_'); 
+
+                    if($content){
+                        echo $content; 
+                    }
+                ?>
+           </p>
         </div>
