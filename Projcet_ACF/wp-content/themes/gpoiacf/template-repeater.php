@@ -26,7 +26,7 @@ get_header();
                             
                             <li><a href="<?php echo $social ["social_url_"]['url'] ?>" class="btn" ><i class="<?php echo $social ["social_url_"]['title'] ?>"></i> </a></li>
                         
-                        <?php
+                        <?php 
                         } 
                     ?>
                     </ul>
