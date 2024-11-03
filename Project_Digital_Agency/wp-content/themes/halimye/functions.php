@@ -2,9 +2,10 @@
 
 function halimye_setup(){
     load_theme_textdomain('halimye', get_template_directory() . '/languages'); 
+    
 }
 
-add_action('wp_theme_support', 'halimye_setup');
+add_action('after_setup_theme', 'halimye_setup');
 
 
 
