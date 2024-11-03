@@ -1,5 +1,13 @@
 <?php 
 
+function halimye_setup(){
+    load_theme_textdomain('halimye', get_template_directory() . '/languages'); 
+}
+
+add_action('wp_theme_support', 'halimye_setup');
+
+
+
 function halimye_assets(){
     wp_enqueue_style('font-poppins', '//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700', array(),'1.0.0', 'all');
     wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '1.0.0', 'all'); 
