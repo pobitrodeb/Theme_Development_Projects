@@ -2,7 +2,8 @@
 
 function halimye_setup(){
     load_theme_textdomain('halimye', get_template_directory() . '/languages'); 
-    add_theme_support('title-tag'); 
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails', array('post', 'sliders'));  
 
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu', 'halimye'),
@@ -38,3 +39,22 @@ function halimye_assets(){
 }
 
 add_action('wp_enqueue_scripts', 'halimye_assets'); 
+
+
+//Custom Posts 
+function halimye_custom_posts(){
+    
+    //Slider Custom Post 
+    register_post_type('sliders', array(
+        'labels'    => array(
+            'name'                  => __('Sliders', 'halimye'), 
+            'singular_name'         => __('Slider', 'halimye'),
+        ),
+        'public'                    => true, 
+        'show_ui'                   => true, 
+        'supports'                  => array('title', 'editor', 'thumbnail', 'custom-fields'), 
+        'show_in_rest'              => true //Guttenbarg Editor Support Added 
+    ));
+
+}
+add_action('init', 'halimye_custom_posts');
