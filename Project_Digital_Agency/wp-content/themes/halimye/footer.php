@@ -61,15 +61,21 @@
       </div>
       <div class="row copyright">
          <div class="col-md-6">
-            <p>&copy; All Rights Reserved 2020</p>
+            <p>&copy; All Rights Reserved <?php echo date("Y"); ?> | Theme Development By Pobitro Deb </p>
          </div>
          <div class="col-md-6 text-right">
             <ul>
-               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            <?php 
+               $socials = get_field('header_social', 'option'); 
+                  foreach ($socials as $social){
+                  ?>
+                     <li>
+                        <a href="<?php echo $social['link']; ?>"><i class="fa <?php echo $social['icon']; ?>"></i></a>
+                     </li>
+                  <?php
+                  }
+                  wp_reset_postdata(); 
+               ?>
             </ul>
          </div>
       </div>
