@@ -158,22 +158,18 @@
                      <div class="page-title">
                         <h4>our skills</h4>
                      </div>
-                     <div class="single-skill">
-                        <h4>html</h4>
-                        <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">90%</div>
-                     </div>
-                     <div class="single-skill">
-                        <h4>css</h4>
-                        <div class="progress-bar" role="progressbar" style="width: 74%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">74%</div>
-                     </div>
-                     <div class="single-skill">
-                        <h4>photoshop</h4>
-                        <div class="progress-bar" role="progressbar" style="width: 94%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">94%</div>
-                     </div>
-                     <div class="single-skill">
-                        <h4>wordpress</h4>
-                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
-                     </div>
+                        <?php
+                           $skills = get_field('skills', 'option');
+                           foreach ($skills as $skill){
+                              ?>
+                               <div class="single-skill">
+                                     <h4><?php echo $skill['skill_title']; ?></h4>
+                                    <div class="progress-bar" role="progressbar" style="width: <?php echo $skill['skill_percentage_']; ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $skill['skill_percentage_']; ?></div>
+                              </div>
+                               <?php
+                           }
+                           wp_reset_postdata(); 
+                        ?>
                   </div>
                </div>
             </div>
