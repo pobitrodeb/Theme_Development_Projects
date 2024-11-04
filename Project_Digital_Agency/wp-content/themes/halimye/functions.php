@@ -3,7 +3,7 @@
 function halimye_setup(){
     load_theme_textdomain('halimye', get_template_directory() . '/languages'); 
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails', array('post', 'sliders'));  
+    add_theme_support('post-thumbnails', array('post', 'sliders', 'teams'));  
 
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu', 'halimye'),
@@ -64,7 +64,7 @@ function halimye_custom_posts(){
         ),
         'public'                            => true, 
         'show_ui'                           => true, 
-        'support'                           => array('title', 'editor', 'custom-fields'), 
+        'supports'                           => array('title', 'editor', 'custom-fields'), 
         'show_in_rest'                      => true, 
     )); 
 
@@ -75,6 +75,18 @@ function halimye_custom_posts(){
             'singular_name'         => __('Counter', 'halimye')
         ),
         'public'                    => true, 
+    ));
+
+    //Team Custom Post
+    register_post_type('teams', array(
+        'labels' => array(
+            'name'                          => __('Teams', 'halimye'), 
+            'singular_name'                 => __('Team', 'halimye'), 
+        ),
+        'public'                            => true, 
+        'show_ui'                           => true, 
+        'supports'                           => array('title', 'editor','thumbnail', 'custom-fields'), 
+        'show_in_rest'                      => true, 
     )); 
 
 }

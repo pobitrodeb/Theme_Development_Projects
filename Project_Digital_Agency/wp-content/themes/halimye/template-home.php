@@ -3,8 +3,8 @@
     Template Name: Home Page 
 */
    get_header(); 
+ 
 ?> 
-
       <!-- Slider Area Start -->
       <section class="slider-area" id="home">
          <div class="slider owl-carousel">
@@ -252,6 +252,7 @@
          </div>
       </section>
       <!-- Counter Area End -->
+       
       <!-- Team Area Start -->
       <section class="team-area pb-100 pt-100" id="team">
          <div class="container">
@@ -264,54 +265,43 @@
                </div>
             </div>
             <div class="row">
+            <?php 
+               $args          = array(
+                  'post_type'          => 'teams', 
+                  'posts_per_page'     => 3   
+               ); 
+               $query = new WP_Query($args); 
+               while($query -> have_posts()){
+               $query -> the_post(); 
+               ?>
                <div class="col-md-4">
                   <div class="single-team">
-                     <img src="<?php echo get_template_directory_uri() ;?>/assets/img/team/1.jpg" alt="" />
+                     <?php the_post_thumbnail(); ?> 
                      <div class="team-hover">
                         <div class="team-content">
-                           <h4>john doe <span>web developer</span></h4>
+                           <h4> <?php the_title(); ?> <span> <?php the_field('member_designation_'); ?> </span></h4>
+                         
                            <ul>
-                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                           <?php
+                                 $social_profile = get_field('social_profile'); 
+
+                                 foreach($social_profile as $profile){
+                                    ?>
+                                    
+                                       <li><a href="<?php echo $profile['social_url']['url']?>"><i class="<?php echo $profile['social_url']['title']?>"></i></a></li>
+                                    
+                                    <?php
+                                 }
+                           ?>
                            </ul>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="col-md-4">
-                  <div class="single-team">
-                     <img src="<?php echo get_template_directory_uri() ;?>/assets/img/team/2.jpg" alt="" />
-                     <div class="team-hover">
-                        <div class="team-content">
-                           <h4>john doe <span>web developer</span></h4>
-                           <ul>
-                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="single-team">
-                     <img src="<?php echo get_template_directory_uri() ;?>/assets/img/team/3.jpg" alt="" />
-                     <div class="team-hover">
-                        <div class="team-content">
-                           <h4>john doe <span>web developer</span></h4>
-                           <ul>
-                              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+            <?php
+            }
+            wp_reset_postdata();
+         ?>
             </div>
          </div>
       </section>
