@@ -3,7 +3,7 @@
 function halimye_setup(){
     load_theme_textdomain('halimye', get_template_directory() . '/languages'); 
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails', array('post', 'sliders', 'teams'));  
+    add_theme_support('post-thumbnails', array('post', 'sliders', 'teams', 'testimonials'));  
 
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu', 'halimye'),
@@ -82,6 +82,18 @@ function halimye_custom_posts(){
         'labels' => array(
             'name'                          => __('Teams', 'halimye'), 
             'singular_name'                 => __('Team', 'halimye'), 
+        ),
+        'public'                            => true, 
+        'show_ui'                           => true, 
+        'supports'                           => array('title', 'editor','thumbnail', 'custom-fields'), 
+        'show_in_rest'                      => true, 
+    )); 
+
+    //Testimonial Custom Post
+    register_post_type('testimonials', array(
+        'labels' => array(
+            'name'                          => __('Testimonials', 'halimye'), 
+            'singular_name'                 => __('Testimonial', 'halimye'), 
         ),
         'public'                            => true, 
         'show_ui'                           => true, 
