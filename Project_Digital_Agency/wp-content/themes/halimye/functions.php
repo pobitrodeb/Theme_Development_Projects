@@ -56,5 +56,17 @@ function halimye_custom_posts(){
         'show_in_rest'              => true //Guttenbarg Editor Support Added 
     ));
 
+    //Services Custom Post 
+    register_post_type('services', array(
+        'labels' => array(
+            'name'                          => __('services', 'halimye'), 
+            'singular_name'                 => __('service', 'halimye'), 
+        ),
+        'public'                            => true, 
+        'show_ui'                           => true, 
+        'support'                           => array('title', 'editor', 'custom-fields'), 
+        'show_in_rest'                      => true, 
+    )); 
+
 }
 add_action('init', 'halimye_custom_posts');
