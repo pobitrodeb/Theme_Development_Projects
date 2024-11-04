@@ -57,50 +57,61 @@
          </div>
       </section>
       <!-- Slider Area Start -->
+
+
       <!-- About Area Start -->
       <section class="about-area pt-100 pb-100" id="about">
          <div class="container">
             <div class="row section-title">
                <div class="col-md-6 text-right">
-                  <h3><span>who we are?</span> about us</h3>
+                  <?php 
+                     $about_section                            = get_field('about_section', 'option'); 
+                  ?>
+                  <h3><span><?php echo $about_section['about_section_sub_heading']; ?></span> <?php echo $about_section['about_section_heading']; ?></h3>
                </div>
                <div class="col-md-6">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry.d </p>
+                   <?php echo $about_section['about_section_description']; ?>
                </div>
             </div>
             <div class="row">
                <div class="col-md-7">
                   <div class="about">
+                     <?php 
+                        $about_content = get_field('about_content', 'option'); 
+                     ?> 
+
                      <div class="page-title">
-                        <h4>welcome to halim</h4>
+                        <h4><?php echo $about_content['title']; ?> </h4>
                      </div>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda distinctio maxime laborum delectus aliquam ipsum itaque voluptatem non reiciendis aliquid totam facere, tempora iure iusto adipisci doloremque in, amet, alias nostrum. Explicabo reprehenderit.</p>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                     <a href="#" class="box-btn">read more <i class="fa fa-angle-double-right"></i></a>
+                    <?php echo $about_content['description'];?> </br> </br>
+                     <a href="<?php echo $about_content['btn_url']; ?> " class="box-btn"><?php echo $about_content['btn_text']; ?> <i class="fa fa-angle-double-right"></i></a>
                   </div>
                </div>
+
                <div class="col-md-5">
-                  <div class="single_about">
-                     <i class="fa fa-laptop"></i>
-                     <h4>our mission</h4>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                  </div>
-                  <div class="single_about">
-                     <i class="fa fa-user"></i>
-                     <h4>our vission</h4>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                  </div>
-                  <div class="single_about">
-                     <i class="fa fa-pencil"></i>
-                     <h4>our history</h4>
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                  </div>
+               <?php 
+                     $about_features = get_field('about_features', 'option'); 
+                  foreach($about_features as $about_feature){
+                     ?>
+                     <div class="single_about">
+                        <i class="fa <?php echo $about_feature['icon'] ;?>"></i>
+                        <h4> <?php echo $about_feature['title']; ?> </h4>
+                         <?php echo $about_feature['description']; ?> 
+                       
+                     </div>
+                     <?php
+                  }
+                  wp_reset_postdata(); 
+               ?>
+                 
                </div>
             </div>
          </div>
       </section>
       <!-- About Area End -->
+
+
+
       <!-- Choose Area End -->
       <section class="choose">
          <div class="container">
@@ -183,6 +194,8 @@
          </div>
       </section>
       <!-- Choose Area End -->
+
+
       <!-- Services Area Start -->
       <section class="services-area pt-100 pb-50" id="services">
          <div class="container">

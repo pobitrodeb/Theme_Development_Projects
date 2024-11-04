@@ -123,11 +123,19 @@ if( function_exists('acf_add_options_page') ) {
         'parent_slug'   => 'halimye-options',
     ));
 
+    
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Halimye About Settings',
+        'menu_title'    => 'About',
+        'parent_slug'   => 'halimye-options',
+    ));
+    
     acf_add_options_sub_page(array(
         'page_title'    => 'Halimye Footer Settings',
         'menu_title'    => 'Footer',
         'parent_slug'   => 'halimye-options',
     ));
+
 
 }
 
