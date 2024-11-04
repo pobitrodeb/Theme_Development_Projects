@@ -59,13 +59,22 @@ function halimye_custom_posts(){
     //Services Custom Post 
     register_post_type('services', array(
         'labels' => array(
-            'name'                          => __('services', 'halimye'), 
-            'singular_name'                 => __('service', 'halimye'), 
+            'name'                          => __('Services', 'halimye'), 
+            'singular_name'                 => __('Service', 'halimye'), 
         ),
         'public'                            => true, 
         'show_ui'                           => true, 
         'support'                           => array('title', 'editor', 'custom-fields'), 
         'show_in_rest'                      => true, 
+    )); 
+
+    //Counter Custom Post 
+    register_post_type('conuters', array(
+        'labels'        => array(
+            'name'                  => __('Counters', 'halimye'), 
+            'singular_name'         => __('Counter', 'halimye')
+        ),
+        'public'                    => true, 
     )); 
 
 }

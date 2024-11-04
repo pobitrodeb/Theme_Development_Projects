@@ -226,26 +226,28 @@
       <section class="counter-area">
          <div class="container-fluid">
             <div class="row">
-               <div class="col-md-3">
-                  <div class="single-counter">
-                     <h4><i class="fa fa-user"></i><span class="counter">567</span>customers</span></h4>
+               <?php
+                  $args = array (
+                     'post_type'                => 'conuters', 
+                     'posts_per_page'           => 4
+                  ); 
+
+                  $query = new WP_Query($args); 
+                  while ($query -> have_posts()){
+                     $query->the_post(); 
+                  ?> 
+                  <div class="col-md-3">
+                     <div class="single-counter">
+                        <h4><i class="<?php the_field('counter_icon') ?>"></i><span class="counter">
+                           <?php the_title(); ?>
+                        </span><?php the_content(); ?></span></h4>
+                     </div>
                   </div>
-               </div>
-               <div class="col-md-3">
-                  <div class="single-counter">
-                     <h4><i class="fa fa-code"></i><span class="counter">236</span>line of codes</h4>
-                  </div>
-               </div>
-               <div class="col-md-3">
-                  <div class="single-counter">
-                     <h4><i class="fa fa-file"></i><span class="counter">789</span>users</h4>
-                  </div>
-               </div>
-               <div class="col-md-3">
-                  <div class="single-counter">
-                     <h4><i class="fa fa-coffee"></i><span class="counter">1,395</span>cup of coffees</h4>
-                  </div>
-               </div>
+                  <?php
+                  }
+                  wp_reset_postdata(); 
+               ?>
+               
             </div>
          </div>
       </section>
