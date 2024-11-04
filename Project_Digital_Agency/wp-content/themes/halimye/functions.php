@@ -130,3 +130,17 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
 }
+
+
+//ACF Options CSS 
+
+function halimye_css(){
+    ?>
+        <style>
+            .header-top {
+                background-color: <?php the_field('header_background', 'option'); ?>;
+            }
+        </style>
+    <?php
+}
+add_action('wp_head', 'halimye_css'); 
