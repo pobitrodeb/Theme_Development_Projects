@@ -50,18 +50,23 @@
             <div class="single-footer contact-box">
                <h4>Contact Us</h4>
                <ul>
-                  <li><i class="fa fa-map-marker"></i> 245 Street, Sydney, Australia</li>
-                  <li><i class="fa fa-mobile"></i>  +23 0034 5567 341</li>
-                  <li><i class="fa fa-phone"></i>  +23 0034 5567 341</li>
-                  <li><i class="fa fa-envelope"></i>  info@demo.com</li>
-                  <li><i class="fa fa-globe"></i>  www.demo.com</li>
+                  <?php
+                     $contact_footer_infromations  = get_field('contact_footer_infromation', 'option'); 
+
+                     foreach ($contact_footer_infromations as $info ){
+                        ?> 
+                          <li><i class="fa <?php echo $info['contact_footer_icon']; ?>"></i> <?php echo $info['contact_footer_text']; ?> </li>
+                        <?php
+                     }
+                     wp_reset_postdata();
+                  ?>
                </ul>
             </div>
          </div>
       </div>
       <div class="row copyright">
          <div class="col-md-6">
-            <p>&copy; All Rights Reserved <?php echo date("Y"); ?> | Theme Development By Pobitro Deb </p>
+            <p> <?php the_field('footer_copyright_text', 'option'); ?> <?php echo date("Y"); ?> | Theme Development By Pobitro Deb </p>
          </div>
          <div class="col-md-6 text-right">
             <ul>
