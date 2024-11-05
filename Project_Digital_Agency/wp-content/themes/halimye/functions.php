@@ -3,7 +3,7 @@
 function halimye_setup(){
     load_theme_textdomain('halimye', get_template_directory() . '/languages'); 
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails', array('post', 'sliders', 'teams', 'testimonials'));  
+    add_theme_support('post-thumbnails', array('post', 'sliders', 'teams', 'testimonials', 'portfolio'));  
 
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu', 'halimye'),
@@ -100,6 +100,27 @@ function halimye_custom_posts(){
         'supports'                           => array('title', 'editor','thumbnail', 'custom-fields'), 
         'show_in_rest'                      => true, 
     )); 
+
+    //Portfolio Custom Post
+    register_post_type('portfolio', array(
+        'labels' => array(
+            'name'                          => __('Portfolios', 'halimye'), 
+            'singular_name'                 => __('Portfolio', 'halimye'), 
+        ),
+        'public'                            => true, 
+        'show_ui'                           => true, 
+        'supports'                           => array('title', 'thumbnail', 'custom-fields'), 
+        'show_in_rest'                      => true, 
+    )); 
+
+    register_taxonomy('portfolio-categories', 'portfolio', array(
+        'labels' => array(
+            'name'                          => __('Categories', 'halimye'), 
+            'singular_name'                 => __('Category', 'halimye'),                           
+        ), 
+        'hierarchical'                      => true, 
+        'show_admin_column'                 => true
+    ));
 
 }
 add_action('init', 'halimye_custom_posts');
