@@ -3,10 +3,10 @@
    <div class="container">
       <div class="row">
          <div class="col-md-6">
-            <h4>best solution for your business <span>the can be used on larger scale projectss as well as small scale projectss</span></h4>
+            <h4> <?php the_field('cta_title', 'option') ?> <span> <?php the_field('cta_description', 'option') ?></span></h4>
          </div>
          <div class="col-md-6 text-center">
-            <a href="#" class="box-btn">contact us <i class="fa fa-angle-double-right"></i></a>
+            <a href=" <?php the_field('cta_button_url', 'option') ?>" class="box-btn"> <?php the_field('cta_button_', 'option') ?><i class="fa fa-angle-double-right"></i></a>
          </div>
       </div>
    </div>

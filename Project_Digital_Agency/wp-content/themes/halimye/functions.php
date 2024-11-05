@@ -143,6 +143,12 @@ if( function_exists('acf_add_options_page') ) {
     ));
 
     acf_add_options_sub_page(array(
+        'page_title'    => 'Halimye CTA Settings',
+        'menu_title'    => 'CTA',
+        'parent_slug'   => 'halimye-options',
+    ));
+
+    acf_add_options_sub_page(array(
         'page_title'    => 'Halimye Footer Settings',
         'menu_title'    => 'Footer',
         'parent_slug'   => 'halimye-options',
