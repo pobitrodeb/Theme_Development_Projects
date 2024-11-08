@@ -62,7 +62,7 @@
                               <img src="<?php echo the_post_thumbnail_url(); ?>" alt="">
                               <div class="portfolio-hover">
                                  <div class="portfolio-content">
-                                    <h3><a href="portfolio-single.html" class=""><i class="fa fa-link"></i> <?php  the_title(); ?> <span><?php the_field('portfolio_short_desciption');?></span></a></h3>
+                                    <h3><a href="<?php the_permalink(); ?>" class=""><i class="fa fa-link"></i> <?php  the_title(); ?> <span><?php the_field('portfolio_short_desciption');?></span></a></h3>
                                  </div>
                               </div>
                            </div>

@@ -109,7 +109,7 @@ function halimye_custom_posts(){
         ),
         'public'                            => true, 
         'show_ui'                           => true, 
-        'supports'                           => array('title', 'thumbnail', 'custom-fields'), 
+        'supports'                           => array('title', 'editor', 'thumbnail', 'custom-fields'), 
         'show_in_rest'                      => true, 
     )); 
 
