@@ -3,7 +3,7 @@
 function halimye_setup(){
     load_theme_textdomain('halimye', get_template_directory() . '/languages'); 
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails', array('post', 'sliders', 'teams', 'testimonials', 'portfolio'));  
+    add_theme_support('post-thumbnails', array('post', 'sliders', 'teams', 'testimonials', 'portfolio', 'gallerys'));  
 
     register_nav_menus(array(
         'primary-menu' => __('Primary Menu', 'halimye'),
@@ -121,6 +121,18 @@ function halimye_custom_posts(){
         'hierarchical'                      => true, 
         'show_admin_column'                 => true
     ));
+
+     //Gallery Custom Post
+     register_post_type('gallerys', array(
+        'labels' => array(
+            'name'                          => __('Gallerys', 'halimye'), 
+            'singular_name'                 => __('Gallery', 'halimye'), 
+        ),
+        'public'                            => true, 
+        'show_ui'                           => true, 
+        'supports'                           => array('title', 'thumbnail', 'custom-fields'), 
+        'show_in_rest'                      => true, 
+    )); 
 
 }
 add_action('init', 'halimye_custom_posts');
