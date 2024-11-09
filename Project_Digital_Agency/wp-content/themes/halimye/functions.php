@@ -216,5 +216,35 @@ function halimye_widgets_init(){
             'before_title'              => '<h4>', 
             'after_title'               => '</h4>',      
     )); 
+
+    register_sidebar( array(
+           'name'                       => __('Footer 1', 'halimye'),
+           'id'                         => 'footer-1', 
+           'description'                => __('This is footer 1', 'halimye'), 
+           'before_widget'              => '<div class="single-footer footer-logo">',  
+           'after_widget'               => '</div>',
+           'before_title'               => '<h3>',   
+           'after_title'                => '</h3>',   
+    ));
+
+    register_sidebar( array (
+        'name'                          => __('Footer-2', 'halimye'), 
+        'id'                            => 'footer-2', 
+        'description'                   => __('This is footer 2', 'halimye'), 
+        'before_widget'                 => '<div class="single-footer">', 
+        'after_widget'                  =>  '</div>', 
+        'before_title'                  => '<h4>', 
+        'after_title'                   => '</h4>'  
+    )); 
+
+    register_sidebar( array(
+        'name'                          => __('Footer 3', 'halimye'), 
+        'id'                            => 'footer-3', 
+        'description'                   => __('This is footer 3', 'halimye'), 
+        'before_widget'                 => '  <div class="single-footer">', 
+        'after_widget'                  => '</div>', 
+        'before_title'                  => '<h4>', 
+        'after_title'                   => '</h4>'
+    )); 
 }
 add_action('widgets_init', 'halimye_widgets_init'); 
