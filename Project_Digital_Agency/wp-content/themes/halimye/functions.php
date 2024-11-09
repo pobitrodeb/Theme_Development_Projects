@@ -203,3 +203,18 @@ function halimye_css(){
     <?php
 }
 add_action('wp_head', 'halimye_css'); 
+
+
+#Register Sidebar 
+function halimye_widgets_init(){
+    register_sidebar( array (
+            'name'                      => __('Main Sidebar', 'halimye'), 
+            'id'                        => 'sidebar-1', 
+            'description'               => __('Here is main sidebar widgets', 'halimye'),
+            'before_widget'             => '<div class="single-sidebar">', 
+            'after_widget'              => '</div>', 
+            'before_title'              => '<h4>', 
+            'after_title'               => '</h4>',      
+    )); 
+}
+add_action('widgets_init', 'halimye_widgets_init'); 
