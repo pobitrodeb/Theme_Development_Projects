@@ -33,6 +33,7 @@
             </div>
             <div class="row">
                <?php
+                 if(class_exists('ACF')){
                   $args = array(
                      'post_type'    => 'services', 
                      'posts_per_page' => 6,
@@ -53,6 +54,7 @@
                   <?php
                   }
 
+                 }
                ?>
             </div>
          </div>

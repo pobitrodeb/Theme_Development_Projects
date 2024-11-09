@@ -89,21 +89,21 @@
                </div>
 
                <div class="col-md-5">
-               <?php 
-                     $about_features = get_field('about_features', 'option'); 
-                  foreach($about_features as $about_feature){
-                     ?>
-                     <div class="single_about">
-                        <i class="fa <?php echo $about_feature['icon'] ;?>"></i>
-                        <h4> <?php echo $about_feature['title']; ?> </h4>
-                         <?php echo $about_feature['description']; ?> 
-                       
-                     </div>
-                     <?php
-                  }
-                  wp_reset_postdata(); 
-               ?>
-                 
+                  <?php 
+                     if(class_exists('ACF')){
+                         $about_features = get_field('about_features', 'option'); 
+                         foreach ($about_features as $about_feature){
+                           ?>
+                              <div class="single_about">
+                                 <i class="fa <?php echo $about_feature['icon'] ;?>"></i>
+                                 <h4> <?php echo $about_feature['title']; ?> </h4>
+                                 <?php echo $about_feature['description']; ?> 
+                              </div>
+                           <?php
+                         } //foreach loop close 
+                         wp_reset_postdata();
+                     } //if Close 
+                  ?>
                </div>
             </div>
          </div>
@@ -124,30 +124,33 @@
                      </div>
                      <div class="accordion" id="accordionExample">
                         <?php
-                           $faqs = get_field('faq', 'option'); 
-                           $i    = 0; 
-                           foreach($faqs as $faq){
-                              $i++;
-                              ?>
-                              
-                              <div class="card">
-                           <div class="card-header" id="heading<?php echo $i ?>">
-                              <h5 class="mb-0">
-                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<?php echo $i ?>" aria-expanded="true" aria-controls="collapse<?php echo $i ?>">
-                                <?php echo $faq['faq_title']; ?>
-                                 </button>
-                              </h5>
-                           </div>
-                           <div id="collapse<?php echo $i ?>" class="collapse <?php if($i == 1 ){echo 'show';} ?>" aria-labelledby="headingOne" data-parent="#accordionExample">
-                              <div class="card-body">
-                              <?php echo $faq['faq_description']; ?>
-                              </div>
-                           </div>
-                        </div>
-
-                              <?php
-                           }
-                           wp_reset_postdata();
+                           if(class_exists('ACF')){
+                              $faqs = get_field('faq', 'option'); 
+                              $i    = 0; 
+                              foreach($faqs as $faq){
+                                 $i++;
+                                 ?>
+                                 
+                                 <div class="card">
+                                    <div class="card-header" id="heading<?php echo $i ?>">
+                                       <h5 class="mb-0">
+                                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse<?php echo $i ?>" aria-expanded="true" aria-controls="collapse<?php echo $i ?>">
+                                       <?php echo $faq['faq_title']; ?>
+                                          </button>
+                                       </h5>
+                                    </div>
+                                    <div id="collapse<?php echo $i ?>" class="collapse <?php if($i == 1 ){echo 'show';} ?>" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                       <div class="card-body">
+                                          <?php echo $faq['faq_description']; ?>
+                                       </div>
+                                    </div>
+                                 </div>
+   
+                                 <?php
+                              }
+                              wp_reset_postdata();
+                           } //if close 
+                          
                         ?> 
                       
                      </div>
@@ -159,16 +162,19 @@
                         <h4>our skills</h4>
                      </div>
                         <?php
-                           $skills = get_field('skills', 'option');
-                           foreach ($skills as $skill){
-                              ?>
-                               <div class="single-skill">
-                                     <h4><?php echo $skill['skill_title']; ?></h4>
-                                    <div class="progress-bar" role="progressbar" style="width: <?php echo $skill['skill_percentage_']; ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $skill['skill_percentage_']; ?></div>
-                              </div>
-                               <?php
-                           }
-                           wp_reset_postdata(); 
+                           if(class_exists('ACF')){
+                              $skills = get_field('skills', 'option');
+                              foreach ($skills as $skill){
+                                 ?>
+                                  <div class="single-skill">
+                                        <h4><?php echo $skill['skill_title']; ?></h4>
+                                       <div class="progress-bar" role="progressbar" style="width: <?php echo $skill['skill_percentage_']; ?>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><?php echo $skill['skill_percentage_']; ?></div>
+                                 </div>
+                                  <?php
+                              }
+                              wp_reset_postdata(); 
+                           } // if close 
+                          
                         ?>
                   </div>
                </div>
@@ -191,26 +197,28 @@
             </div>
             <div class="row">
                <?php
-                  $args = array(
-                     'post_type'    => 'services', 
-                     'posts_per_page' => 6,
-                  ); 
-                  $query   = new WP_Query($args); 
-                  while($query -> have_posts()){
-                     $query -> the_post(); 
-                  ?> 
-                  <div class="col-lg-4 col-md-6">
-                     <!-- Single Service -->
-                     <div class="single-service">
-                        <i class="<?php the_field('services_icon');?>"></i>
-                        <h4><?php the_title() ?> </h4>
-                        <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p> -->
-                         <?php the_content(); ?> 
+                  if(class_exists('ACF')){
+                     $args = array(
+                        'post_type'    => 'services', 
+                        'posts_per_page' => 6,
+                     );
+                     $query   = new WP_Query($args); 
+                     while($query -> have_posts()){
+                        $query -> the_post(); 
+                     ?> 
+                  
+                     <div class="col-lg-4 col-md-6">
+                        <!-- Single Service -->
+                        <div class="single-service">
+                           <i class="<?php the_field('services_icon');?>"></i>
+                           <h4><?php the_title() ?> </h4>
+                           <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p> -->
+                           <?php the_content(); ?> 
+                        </div>
                      </div>
-                  </div>
-                  <?php
-                  }
-
+                     <?php
+                     }
+                  } //if close 
                ?>
             </div>
          </div>
@@ -222,25 +230,27 @@
          <div class="container-fluid">
             <div class="row">
                <?php
-                  $args = array (
-                     'post_type'                => 'conuters', 
-                     'posts_per_page'           => 4
-                  ); 
-
-                  $query = new WP_Query($args); 
-                  while ($query -> have_posts()){
-                     $query->the_post(); 
-                  ?> 
-                  <div class="col-md-3">
-                     <div class="single-counter">
-                        <h4><i class="<?php the_field('counter_icon') ?>"></i><span class="counter">
-                           <?php the_title(); ?>
-                        </span><?php the_content(); ?></span></h4>
+                  if(class_exists('ACF')){
+                     $args = array (
+                        'post_type'                => 'conuters', 
+                        'posts_per_page'           => 4
+                     ); 
+   
+                     $query = new WP_Query($args); 
+                     while ($query -> have_posts()){
+                        $query->the_post(); 
+                     ?> 
+                     <div class="col-md-3">
+                        <div class="single-counter">
+                           <h4><i class="<?php the_field('counter_icon') ?>"></i><span class="counter">
+                              <?php the_title(); ?>
+                           </span><?php the_content(); ?></span></h4>
+                        </div>
                      </div>
-                  </div>
-                  <?php
+                     <?php
+                     }
+                     wp_reset_postdata(); 
                   }
-                  wp_reset_postdata(); 
                ?>
                
             </div>
@@ -261,42 +271,44 @@
             </div>
             <div class="row">
             <?php 
-               $args          = array(
-                  'post_type'          => 'teams', 
-                  'posts_per_page'     => 3   
-               ); 
-               $query = new WP_Query($args); 
-               while($query -> have_posts()){
-               $query -> the_post(); 
-               ?>
-               <div class="col-md-4">
-                  <div class="single-team">
-                     <?php the_post_thumbnail(); ?> 
-                     <div class="team-hover">
-                        <div class="team-content">
-                           <h4> <?php the_title(); ?> <span> <?php the_field('member_designation_'); ?> </span></h4>
-                         
-                           <ul>
-                           <?php
-                                 $social_profile = get_field('social_profile'); 
-
-                                 foreach($social_profile as $profile){
-                                    ?>
-                                    
-                                       <li><a href="<?php echo $profile['social_url']['url']?>"><i class="<?php echo $profile['social_url']['title']?>"></i></a></li>
-                                    
-                                    <?php
-                                 }
-                           ?>
-                           </ul>
+               if(class_exists('ACF')){
+                  $args          = array(
+                     'post_type'          => 'teams', 
+                     'posts_per_page'     => 3   
+                  ); 
+                  $query = new WP_Query($args); 
+                  while($query -> have_posts()){
+                  $query -> the_post(); 
+                  ?>
+                  <div class="col-md-4">
+                     <div class="single-team">
+                        <?php the_post_thumbnail(); ?> 
+                        <div class="team-hover">
+                           <div class="team-content">
+                              <h4> <?php the_title(); ?> <span> <?php the_field('member_designation_'); ?> </span></h4>
+                            
+                              <ul>
+                              <?php
+                                    $social_profile = get_field('social_profile'); 
+   
+                                    foreach($social_profile as $profile){
+                                       ?>
+                                       
+                                          <li><a href="<?php echo $profile['social_url']['url']?>"><i class="<?php echo $profile['social_url']['title']?>"></i></a></li>
+                                       
+                                       <?php
+                                    }
+                              ?>
+                              </ul>
+                           </div>
                         </div>
                      </div>
                   </div>
-               </div>
-            <?php
-            }
-            wp_reset_postdata();
-         ?>
+               <?php
+               }
+               wp_reset_postdata();
+               }//if close 
+            ?>
             </div>
          </div>
       </section>
@@ -319,6 +331,8 @@
                <div class="col-md-12">
                   <div class="testimonials owl-carousel">
                      <?php 
+                       if(class_exists('ACF')){
+
                         $args = array(
                            'post_type'                => 'testimonials', 
                            'posts_per_page'           => 3
@@ -338,6 +352,9 @@
                            <?php
                         }
                         wp_reset_postdata(); 
+
+
+                       }
                      ?>
                   </div>
                </div>
@@ -359,37 +376,39 @@
             </div>
             <div class="row">
                <?php
-                     $args = array(
-                        'post_type'             => 'post', 
-                        'posts_per_page'        => 3
-                     ); 
-                  $query  = new WP_Query($args); 
-                  while($query -> have_posts()){
-                     $query -> the_post(); 
-                  ?> 
-                     <div class="col-md-4">
-                        <div class="single-blog">
-                           <!-- <img src="<?php echo get_template_directory_uri() ;?>/assets/img/blog/blog1.jpg" alt="" /> -->
-                            <?php the_post_thumbnail() ?> 
-                           <div class="post-content">
-                              <div class="post-title">
-                                 <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                     if(class_exists('ACF')){
+                        $args = array(
+                           'post_type'             => 'post', 
+                           'posts_per_page'        => 3
+                        ); 
+                     $query  = new WP_Query($args); 
+                     while($query -> have_posts()){
+                        $query -> the_post(); 
+                     ?> 
+                        <div class="col-md-4">
+                           <div class="single-blog">
+                              <!-- <img src="<?php echo get_template_directory_uri() ;?>/assets/img/blog/blog1.jpg" alt="" /> -->
+                               <?php the_post_thumbnail() ?> 
+                              <div class="post-content">
+                                 <div class="post-title">
+                                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                 </div>
+                                 <div class="pots-meta">
+                                    <ul>
+                                       <li><a href="#">25 oct 2018</a></li>
+                                       <li><a href="#"><?php the_author(); ?></a></li>
+                                    </ul>
+                                 </div>
+                                 <?php the_excerpt();?>
+                                 <a href="<?php the_permalink(); ?>" class="box-btn">read more <i class="fa fa-angle-double-right"></i></a>
                               </div>
-                              <div class="pots-meta">
-                                 <ul>
-                                    <li><a href="#">25 oct 2018</a></li>
-                                    <li><a href="#"><?php the_author(); ?></a></li>
-                                 </ul>
-                              </div>
-                              <?php the_excerpt();?>
-                              <a href="<?php the_permalink(); ?>" class="box-btn">read more <i class="fa fa-angle-double-right"></i></a>
                            </div>
                         </div>
-                     </div>
-
-                  <?php
-                  }
-                  wp_reset_postdata(); 
+   
+                     <?php
+                     }
+                     wp_reset_postdata(); 
+                     }//if close 
                ?>
 
             </div>

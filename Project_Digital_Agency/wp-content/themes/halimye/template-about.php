@@ -27,7 +27,7 @@
             <div class="row section-title">
                <div class="col-md-6 text-right">
                   <?php 
-                     $about_section                            = get_field('about_section', 'option'); 
+                     $about_section  = get_field('about_section', 'option'); 
                   ?>
                   <h3><span><?php echo $about_section['about_section_sub_heading']; ?></span> <?php echo $about_section['about_section_heading']; ?></h3>
                </div>
@@ -39,7 +39,9 @@
                <div class="col-md-7">
                   <div class="about">
                      <?php 
-                        $about_content = get_field('about_content', 'option'); 
+                        if(class_exists('ACF')){
+                           $about_content = get_field('about_content', 'option'); 
+                        }
                      ?> 
 
                      <div class="page-title">
@@ -52,18 +54,20 @@
 
                <div class="col-md-5">
                <?php 
+                   if(class_exists('ACF')){
                      $about_features = get_field('about_features', 'option'); 
-                  foreach($about_features as $about_feature){
-                     ?>
-                     <div class="single_about">
-                        <i class="fa <?php echo $about_feature['icon'] ;?>"></i>
-                        <h4> <?php echo $about_feature['title']; ?> </h4>
-                         <?php echo $about_feature['description']; ?> 
-                       
-                     </div>
-                     <?php
+                     foreach($about_features as $about_feature){
+                        ?>
+                        <div class="single_about">
+                           <i class="fa <?php echo $about_feature['icon'] ;?>"></i>
+                           <h4> <?php echo $about_feature['title']; ?> </h4>
+                            <?php echo $about_feature['description']; ?> 
+                          
+                        </div>
+                        <?php
+                     }
+                     wp_reset_postdata(); 
                   }
-                  wp_reset_postdata(); 
                ?>
                  
                </div>

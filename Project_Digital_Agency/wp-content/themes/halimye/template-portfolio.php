@@ -40,6 +40,7 @@
             </div>
             <div class="row grid no-gutters">
                <?php
+                 if(class_exists('ACF')){
                   $args    =  array(
                      'post_type'             => 'portfolio', 
                      'posts_per_page'        => 10, 
@@ -70,6 +71,7 @@
 
                      <?php
                   }
+                 }
                ?>
             </div>
          </div>
