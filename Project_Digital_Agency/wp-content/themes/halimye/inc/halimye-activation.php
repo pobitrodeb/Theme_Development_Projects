@@ -9,6 +9,11 @@ function halimye_plugin_activation(){
             'required'  => true,     
         ),
         array (
+            'name'      => 'One Click Demo Import', 
+            'slug'      => 'one-click-demo-import', 
+            'required'  => true,     
+        ),
+        array (
             'name'      => 'Advanced Custom Fields: Font Awesome Field', 
             'slug'      => 'advanced-custom-fields-font-awesome', 
             'required'  => true,     

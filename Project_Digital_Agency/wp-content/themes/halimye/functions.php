@@ -2,6 +2,8 @@
 
 require_once get_template_directory(). '/inc/class-tgm-plugin-activation.php'; 
 require_once get_template_directory(). '/inc/halimye-activation.php'; 
+require_once get_template_directory(). '/inc/halimye-demo-acf-data.php'; 
+require_once get_template_directory(). '/inc/halimye-demo-data.php'; 
 
 
 function halimye_setup(){
