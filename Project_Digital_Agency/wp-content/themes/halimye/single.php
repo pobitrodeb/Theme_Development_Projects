@@ -35,6 +35,8 @@
                     </form>
                 </div>
             </div>
+
+            
             <div class="col-xl-4">
                 <?php
                     if(is_active_sidebar('sidebar-1')){
