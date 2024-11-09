@@ -1,5 +1,9 @@
 <?php 
 
+require_once get_template_directory(). '/inc/class-tgm-plugin-activation.php'; 
+require_once get_template_directory(). '/inc/halimye-activation.php'; 
+
+
 function halimye_setup(){
     load_theme_textdomain('halimye', get_template_directory() . '/languages'); 
     add_theme_support('title-tag');
@@ -153,3 +157,5 @@ function halimye_widgets_init(){
     )); 
 }
 add_action('widgets_init', 'halimye_widgets_init'); 
+
+
