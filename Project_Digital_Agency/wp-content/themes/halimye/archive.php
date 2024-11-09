@@ -9,10 +9,10 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="breadcumb">
-                    <h4><?php the_title(); ?></h4>
+                    <h4> <?php the_archive_title();?> </h4>
                     <ul>
                         <li><a href=""></a>Home</li> / 
-                        <li><?php the_title(); ?></li>
+                        <li><?php the_archive_title();?> </li>
                     </ul>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                                  <ul>
                                     <li><a href="#"><?php the_date(); ?></a></li>
                                     <li><a href="#"><?php the_category(', ');?></a></li>
-                                    <li><?php the_author_posts_link(); ?></li>
+                                    <li><a href="#"><?php the_author(); ?></a></li>
                                  </ul>
                               </div>
                               <?php the_excerpt();?>
