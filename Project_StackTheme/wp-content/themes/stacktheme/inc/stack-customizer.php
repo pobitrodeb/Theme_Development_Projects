@@ -24,5 +24,59 @@ Kirki::add_field('stacktheme_config', [
     'settings'          => 'banner_heading', 
     'section'           => 'banner_section', 
     'label'             => esc_html__('Banner Heading', $domain), 
-    'description'       => esc_html__('We Discover, Design & Build Digital Presence of Businesses', $domain)
+    'description'       => esc_html__('We Discover, Design & Build Digital Presence of Businesses', $domain), 
+    'transport'         => 'postMessage', 
+    'js_vars'           => array(
+        array (
+          'element'  => '.head-title',
+			'function' => 'html',
+        )
+    )
+]);
+
+// Banner Btn Text 
+Kirki::add_field('stacktheme_config', [
+    'type'              => 'text', 
+    'settings'          => 'banner_btn_text', 
+    'section'           => 'banner_section', 
+    'label'             => esc_html__('Banner Heading', $domain), 
+    'priority'          => 10,
+    'transport'         => 'postMessage', 
+    'js_vars'           => array(
+        array (
+          'element'  => '.btn-common',
+			'function' => 'html',
+        )
+    )
+]);
+
+// Banner Btn Text 
+Kirki::add_field('stacktheme_config', [
+    'type'              => 'link', 
+    'settings'          => 'banner_btn_link', 
+    'section'           => 'banner_section', 
+    'label'             => esc_html__('Banner Heading', $domain), 
+    'default'           => esc_html__('https://www.google.com', $domain),
+    'priority'          => 10,
+    'transport'         => 'postMessage', 
+    'js_vars'           => array(
+        array (
+          'element'  => '.btn-common',
+			'function' => 'html',
+        )
+    )
+]);
+
+
+// Banner Image 
+Kirki::add_field('stacktheme_config', [
+    'type'              => 'image', 
+    'settings'          => 'banner_image',  
+    'section'           => 'banner_section', 
+    'label'             => esc_html__('Banner Image', $domain), 
+    'default'           => '',
+    'priority'          => 10,
+    'choices'           => [
+		'save_as' => 'array',
+	],
 ]);
