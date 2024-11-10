@@ -34,6 +34,29 @@ Kirki::add_field('stacktheme_config', [
     )
 ]);
 
+Kirki::add_field('stacktheme_config', [
+    'type'              => 'typography', 
+    'settings'          => 'banner_heading_typography', 
+    'section'           => 'banner_section', 
+    'label'             => esc_html__('Banner Heading Typography', $domain), 
+    'default'           => [
+        'font-family'     => 'Roboto',
+        'variant'         => 'regular',
+        'font-style'      => 'normal',
+        'color'           => '#333333',
+        'font-size'       => '84px',
+        'line-height'     => '1.5',
+        'letter-spacing'  => '0',
+        'text-transform'  => 'none',
+        'text-decoration' => 'none',
+        'text-align'      => 'center',
+    ],
+    'output'              => [
+        'element'         => '#hero-area .contents .head-title',
+    ],
+   
+]);
+
 // Banner Btn Text 
 Kirki::add_field('stacktheme_config', [
     'type'              => 'text', 
