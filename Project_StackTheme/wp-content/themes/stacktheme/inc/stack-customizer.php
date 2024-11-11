@@ -368,6 +368,7 @@ Kirki::add_field('stacktheme_config', [
         ),
     )
 ]); 
+
 Kirki::add_field('stacktheme_config', [
     'type'              => 'typography', 
     'settings'          => 'services_title_typography', 
@@ -563,3 +564,75 @@ Kirki::add_field('stacktheme_config', [
     ],
 
 ]);
+
+
+// Team Section Customizer 
+Kirki::add_section('team_section', array(
+    'title'     => esc_html__( 'Team Section', $domain), 
+    'panel'     => 'stacktheme_panel', 
+    'priotity'  => '120',
+));
+
+Kirki::add_field('stacktheme_config', [
+'type'          => 'checkbox', 
+'settings'      => 'team_section_checkbox', 
+'section'       => 'team_section', 
+'label'         => esc_html__('Show Team Section?', $domain), 
+'default'       => true, 
+]);
+
+
+// Team Section Title 
+Kirki::add_field('stacktheme_config', [
+    'type'             => 'text', 
+    'settings'         => 'team_section_title', 
+    'section'          => 'team_section', 
+    'label'            => esc_html__('Add Team Section Title', $domain), 
+    'default'          => esc_html__('Meet our team', $domain), 
+    'transport'        => 'postMessage', 
+    'js_vars'          => array(
+       array(
+               'element'       => '.team_title', 
+               'function'      => 'html'
+       ),
+    )
+]); 
+
+Kirki::add_field('stacktheme_config', [
+    'type'              => 'typography', 
+    'settings'          => 'team_section_title_typography', 
+    'section'           => 'team_section', 
+    'label'             => esc_html__('Services Heading Typography', $domain), 
+    'default'           => [
+        'font-family'       => 'Titillium Web"',
+        'font-weight'       => '700', 
+        'font-size'         => '30px',
+        'color'             => '#222222',
+        'line-height'       => '36px',
+        'letter-spacing'    => '0',
+        'text-transform'    => 'none',
+        'text-decoration'   => 'none',
+        'text-align'        => 'center',  
+    ], 
+    'output'            => array (
+        'element'       => '.team_title', 
+        'function'      => 'html'
+    )
+]);
+
+// Team Section Sub-Title Customizer 
+Kirki::add_field('stacktheme_config', [
+    'type'          => 'textarea', 
+    'settings'      => 'team_subtitle', 
+    'section'       => 'team_section', 
+    'label'         => esc_html__('Add Team Subtitle ', $domain), 
+    'default'       => esc_html__('A desire to help and empower others between community contributors in technology
+    began to grow in 2024.', $domain), 
+    'transport'     => 'postMessage', 
+    'js_vars'       => array(
+        array(
+                'element'       => '.team_subtitle', 
+                'function'      => 'html', 
+        ),
+    )
+]); 
