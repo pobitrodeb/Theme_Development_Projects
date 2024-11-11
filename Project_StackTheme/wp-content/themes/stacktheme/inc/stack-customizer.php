@@ -294,14 +294,26 @@ Kirki::add_field('stacktheme_config', [
 
 
 
-// About Section Customizer 
+
+// Services Show or Not 
+Kirki::add_field('stacktheme_config', [
+    'type'          => 'checkbox', 
+    'settings'      => 'services_checkbox', 
+    'section'       => 'service_section',
+    'priotity'      => 100, 
+    'label'         => esc_html__('Services Show?', $domain), 
+    'default'       => true, 
+]);
+
+
+// Services Section Customizer 
 Kirki::add_section('service_section', array(
     'title'     => esc_html__('Services Section', $domain), 
     'panel'     => 'stacktheme_panel', 
     'priotity'  => '140',
 ));
 
-// About Section Title Customizer 
+// Services Section Title Customizer 
 Kirki::add_field('stacktheme_config', [
      'type'             => 'text', 
      'settings'         => 'services_title', 
@@ -340,7 +352,7 @@ Kirki::add_field('stacktheme_config', [
     )
 ]);
 
-// About Section Sub-Title Customizer 
+// Services Section Sub-Title Customizer 
 Kirki::add_field('stacktheme_config', [
     'type'          => 'textarea', 
     'settings'      => 'services_subtitle', 
@@ -379,7 +391,7 @@ Kirki::add_field('stacktheme_config', [
 ]);
 
 
-// About Section Services Items 
+// Services Section Services Items 
 Kirki::add_field('stacktheme_config', [
     'type'          => 'repeater', 
     'section'       => 'service_section', 
@@ -429,6 +441,8 @@ Kirki::add_field('stacktheme_config', [
        
 ]);
 
+
+
 // Services Item Column 
 Kirki::add_field('stacktheme_config', [
         'type'          => 'select', 
@@ -462,4 +476,66 @@ Kirki::add_field('stacktheme_config', [
             'property'      => 'text-align'
         ), 
     )
+]); 
+
+
+// Video Section Customizer 
+Kirki::add_section('video_section', array(
+        'title'     => esc_html__( 'Video Section', $domain), 
+        'panel'     => 'stacktheme_panel', 
+        'priotity'  => '130',
+));
+
+Kirki::add_field('stacktheme_config', [
+    'type'          => 'checkbox', 
+    'settings'      => 'show_video_section', 
+    'section'       => 'video_section', 
+    'label'         => esc_html__('Show Video Section?', $domain), 
+    'default'       => true, 
+]);
+
+Kirki::add_field('stacktheme_config', [
+    'type'             => 'text', 
+    'settings'         => 'video_section_title', 
+    'section'          => 'video_section', 
+    'label'            => esc_html__('Add Video Title', $domain), 
+    'default'          => esc_html__('Watch Video', $domain), 
+    'transport'        => 'postMessage', 
+    'js_vars'          => array(
+       array(
+               'element'       => '.video_title', 
+               'function'      => 'html'
+       ),
+    )
+]); 
+
+Kirki::add_field('stacktheme_config', [
+    'type'                  => 'typography', 
+    'settings'              => 'video_section_title_typography', 
+    'section'               => 'video_section', 
+    'label'                 => esc_html__('Video Content Typography', $domain), 
+    'default'               => [
+        'font-family'       => 'Titillium Web"',
+        'font-weight'       => '700', 
+        'font-size'         => '30px',
+        'color'             => '#222222',
+        'line-height'       => '36px',
+        'letter-spacing'    => '0',
+        'text-transform'    => 'none',
+        'text-decoration'   => 'none',
+        'text-align'        => 'center',  
+    ], 
+    'output'                => array(
+        'element'     =>  '.video_title', 
+        'function'    => 'html'        
+    )
+]);
+
+//Video URL
+Kirki::add_field('stacktheme_config', [
+    'type'             => 'url', 
+    'settings'         => 'video_url', 
+    'section'          => 'video_section', 
+    'label'            => esc_html__('Add Video URL', $domain), 
+    'default'          => 'https://yoururl.com/', 
 ]); 
