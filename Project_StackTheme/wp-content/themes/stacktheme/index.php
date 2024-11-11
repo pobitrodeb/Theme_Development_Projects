@@ -77,7 +77,7 @@
                 if($settings){
                   foreach($settings as $item){
                     ?>
-                   <div class="col-md-6 col-lg-4 col-xs-12">
+                   <div class="<?php echo get_theme_mod('services_column') ?>">
                       <div class="services-item wow fadeInRight" data-wow-delay="0.3s">
                         <div class="icon">
                           <i class="<?php echo $item['service_icon']?>"></i>

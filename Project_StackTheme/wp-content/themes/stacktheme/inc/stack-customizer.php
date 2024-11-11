@@ -427,4 +427,20 @@ Kirki::add_field('stacktheme_config', [
         'limit' => 6, 
     ] 
        
-    ]);
+]);
+
+// Services Item Column 
+Kirki::add_field('stacktheme_config', [
+        'type'          => 'select', 
+        'settings'      => 'services_column', 
+        'section'       => 'service_section', 
+        'label'         => esc_html__('Services Column Number', $domain), 
+        'default'       => 'col-lg-4', 
+        'choices'       => [
+            'col-lg-6'      => esc_html__('2 Columnns ', $domain),
+            'col-lg-4'      => esc_html__('3 Columnns ', $domain),
+            'col-lg-3'      => esc_html__('4 Columnns ', $domain),
+            'col-lg-2'      => esc_html__('6 Columnns ', $domain),
+        ], 
+        
+]);
