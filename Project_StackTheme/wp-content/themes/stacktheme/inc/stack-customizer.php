@@ -246,8 +246,8 @@ Kirki::add_field('stacktheme_config', [
 
 //About Items 
 Kirki::add_field('stacktheme_config', [
-    'type'          => 'repeater', 
-       
+    'type'          => 'repeater',
+    'settings'      => 'about_repeater',  
     'section'       => 'about_section',
     'label'         => esc_html__('About Items', $domain),  
     'priority'      => 10, 
@@ -257,7 +257,6 @@ Kirki::add_field('stacktheme_config', [
         'field' => 'about_item_title', 
     ],
     'button_label'      => esc_html__('Add New About Item', $domain), 
-    'settings'      => 'about_repeater', 
     'default'      => [
 			[
 				'about_item_icon'   => 'lni-microphone',
@@ -292,3 +291,140 @@ Kirki::add_field('stacktheme_config', [
 	        'limit' => 3
         ]
 ]);
+
+
+
+// About Section Customizer 
+Kirki::add_section('service_section', array(
+    'title'     => esc_html__('Services Section', $domain), 
+    'panel'     => 'stacktheme_panel', 
+    'priotity'  => '140',
+));
+
+// About Section Title Customizer 
+Kirki::add_field('stacktheme_config', [
+     'type'             => 'text', 
+     'settings'         => 'services_title', 
+     'section'          => 'service_section', 
+     'label'            => esc_html__('Add Services Title', $domain), 
+     'default'          => esc_html__('Our Services', $domain), 
+     'transport'        => 'postMessage', 
+     'js_vars'          => array(
+        array(
+                'element'       => '.services_title', 
+                'function'      => 'html'
+        ),
+     )
+]); 
+
+
+Kirki::add_field('stacktheme_config', [
+    'type'              => 'typography', 
+    'settings'          => 'services_title_typography', 
+    'section'           => 'service_section', 
+    'label'             => esc_html__('Services Heading Typography', $domain), 
+    'default'           => [
+        'font-family'       => 'Titillium Web"',
+        'font-weight'       => '700', 
+        'font-size'         => '30px',
+        'color'             => '#222222',
+        'line-height'       => '36px',
+        'letter-spacing'    => '0',
+        'text-transform'    => 'none',
+        'text-decoration'   => 'none',
+        'text-align'        => 'center',  
+    ], 
+    'output'            => array (
+        'element'       => '.services_title', 
+        'function'      => 'html'
+    )
+]);
+
+// About Section Sub-Title Customizer 
+Kirki::add_field('stacktheme_config', [
+    'type'          => 'textarea', 
+    'settings'      => 'services_subtitle', 
+    'section'       => 'service_section', 
+    'label'         => esc_html__('Add Services Subtitle ', $domain), 
+    'default'       => esc_html__('A desire to help and empower others between community contributors in technology
+    began to grow in 2024.', $domain), 
+    'transport'     => 'postMessage', 
+    'js_vars'       => array(
+        array(
+                'element'       => '.services_subtitle', 
+                'function'      => 'html', 
+        ),
+    )
+]); 
+Kirki::add_field('stacktheme_config', [
+    'type'              => 'typography', 
+    'settings'          => 'services_title_typography', 
+    'section'           => 'service_section', 
+    'label'             => esc_html__('Services Heading Typography', $domain), 
+    'default'           => [
+        'font-family'       => 'Titillium Web"',
+        'font-weight'       => '700', 
+        'font-size'         => '30px',
+        'color'             => '#222222',
+        'line-height'       => '36px',
+        'letter-spacing'    => '0',
+        'text-transform'    => 'none',
+        'text-decoration'   => 'none',
+        'text-align'        => 'center',  
+    ], 
+    'output'            => array (
+        'element'       => '.services_subtitle', 
+        'function'      => 'html'
+    )
+]);
+
+
+// About Section Services Items 
+Kirki::add_field('stacktheme_config', [
+    'type'          => 'repeater', 
+    'section'       => 'service_section', 
+    'settings'      => 'services_repeater', 
+    'label'         => esc_html__('Add New Services', $domain), 
+    'row_label'     => [
+        'type'      => 'field', 
+        'value'     => esc_html__('Add New Item', $domain),
+        'field'     => 'about_item_title', 
+    ], 
+    'button_label'  => esc_html__('Add New Services Item', $domain), 
+    'default'       => [
+        [
+            'service_icon'      => 'lni-pencil', 
+            'services_title'    => esc_html__('Content Writing', $domain),
+            'services_desc'     => esc_html__('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde perspiciatis dicta labore nulla beatae quaerat quia incidunt laborum aspernatur...', $domain),
+        ],
+    ], 
+    'fields'        => [
+        'service_icon' => [
+                'type'      => 'select', 
+                'label'     => esc_html__('Add Service Icon', $domain), 
+                'default'   => '',
+                'choices'   => array(
+                    'lni-pencil'        => __('Item 1', $domain),
+                    'lni-briefcase'     => __('Item 2', $domain),
+                    'lni-cog'           => __('Item 3', $domain),
+                    'lni-mobile'        => __('Item 4', $domain),
+                    'lni-layers'        => __('Item 5', $domain),
+                    'lni-rocket'        => __('Item 6', $domain),
+                )
+        ], 
+        'services_title' => [
+                'type'      => 'text', 
+                'label'     => esc_html__('Add Service Title', $domain), 
+                'default'   => '',
+        ], 
+        'services_desc' => [
+                'type'      => 'textarea', 
+                'label'     => esc_html__('Add Service Description', $domain), 
+                'default'   => '',
+        ], 
+    ],
+    'choices' => [
+        'limit' => 6, 
+    ] 
+       
+    ]);
