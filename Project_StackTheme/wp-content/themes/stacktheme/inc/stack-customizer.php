@@ -260,12 +260,23 @@ Kirki::add_field('stacktheme_config', [
     'settings'      => 'about_repeater', 
     'default'      => [
 			[
+				'about_item_icon'   => 'lni-microphone',
 				'about_item_title'   => esc_html__( 'What we do', $domain ),
 				'about_item_desc'    => esc_html__( 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores', $domain ),
 				
 			],
 		],
     'fields'       => [
+			'about_item_icon'   => [
+				'type'        => 'select',
+				'label'       => esc_html__( 'About Item Title', 'kirki' ),
+				'default'     => '',
+                'choices'     => array(
+                    'lni-microphone'    => __('Icon -1', $domain),
+                    'lni-users'         => __('Icon -2', $domain),
+                    'lni-medall-alt'    => __('Icon -3', $domain),
+                )
+			],
 			'about_item_title'   => [
 				'type'        => 'text',
 				'label'       => esc_html__( 'About Item Title', 'kirki' ),
@@ -277,4 +288,7 @@ Kirki::add_field('stacktheme_config', [
 				'default'     => '',
 			],
 		],
+        'choices' => [
+	        'limit' => 3
+        ]
 ]);

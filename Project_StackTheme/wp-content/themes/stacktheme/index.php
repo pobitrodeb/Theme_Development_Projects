@@ -24,7 +24,7 @@
                   ?> 
                   <div class="feature-item wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
                     <div class="icon">
-                      <i class="lni-microphone"></i>
+                      <i class="<?php echo $item['about_item_icon'] ?>"></i>
                     </div>
                     <div class="feature-content">
                       <h3><?php echo $item['about_item_title']; ?> </h3>
@@ -35,7 +35,26 @@
                 }
               ?>
              
+<!-- 
+              <div class="feature-item wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="500ms">
+                <div class="icon">
+                  <i class="lni-users"></i>
+                </div>
+                <div class="feature-content">
+                  <h3>Meet our team</h3>
+                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores </p>
+                </div>
+              </div>
 
+              <div class="feature-item wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="700ms">
+                <div class="icon">
+                  <i class="lni-medall-alt"></i>
+                </div>
+                <div class="feature-content">
+                  <h3>Our Creation</h3>
+                  <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia con- sequuntur magni dolores </p>
+                </div>
+              </div> -->
 
             </div>
           </div>
