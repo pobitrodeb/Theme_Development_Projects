@@ -539,3 +539,27 @@ Kirki::add_field('stacktheme_config', [
     'label'            => esc_html__('Add Video URL', $domain), 
     'default'          => 'https://yoururl.com/', 
 ]); 
+
+//Video Section Background Image 
+Kirki::add_field('stacktheme_config', [
+    'type'              => 'background', 
+    'settings'          => 'video_section_background', 
+    'section'           => 'video_section', 
+    'label'             => esc_html__('Add Background Image', $domain), 
+    'default'           => [
+        'background_color'          => '', 
+        'background_image'          => '', 
+        'background_repeat'         => 'no-repeat', 
+        'background_positon'        => 'center center', 
+        'background_size'           => 'cover', 
+        'background_attachment'     => 'scroll',
+    ], 
+    'transport'         => 'auto', 
+    'output'            => [
+        [
+            'element'   => '.video-promo', 
+            
+        ],
+    ],
+
+]);
