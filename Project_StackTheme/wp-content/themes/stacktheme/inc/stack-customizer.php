@@ -442,5 +442,24 @@ Kirki::add_field('stacktheme_config', [
             'col-lg-3'      => esc_html__('4 Columnns ', $domain),
             'col-lg-2'      => esc_html__('6 Columnns ', $domain),
         ], 
-        
 ]);
+
+// Services Item Column Align 
+Kirki::add_field('stacktheme_config', [
+    'type'             => 'radio-buttonset', 
+    'settings'         => 'services_columns_alignment', 
+    'section'          => 'service_section', 
+    'label'            => esc_html__('Services Alignment', $domain), 
+    'default'          => 'left', 
+    'choices'          => [
+        'left'    => esc_html__('Left', $domain),
+        'right'   => esc_html__('Right', $domain),
+        'center'  => esc_html__('Center', $domain),
+    ], 
+    'output'    => array(
+        array(
+            'element'       => '.services-item', 
+            'property'      => 'text-align'
+        ), 
+    )
+]); 
