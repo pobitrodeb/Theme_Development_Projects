@@ -636,3 +636,50 @@ Kirki::add_field('stacktheme_config', [
         ),
     )
 ]); 
+
+// Team Section Team Member
+Kirki::add_field('stacktheme_config', [
+    'type'          => 'repeater', 
+    'settings'      => 'team_member_repeater', 
+    'section'       =>  'team_section',
+    'label'         => esc_html__('Add New Team Member', $domain), 
+    'button_label'  => esc_html__('Add New Members', $domain),
+    'row_label'     => [
+        'type'      => 'field', 
+        'value'     => esc_html__('Add New Item', $domain), 
+        'field'     => 'team_item_title', 
+    ],
+    'fields'        => [
+       'team_image' => [
+        'type'          => 'image', 
+        'label'         =>  esc_html__('Team Member Image', $domain), 
+        'default'       => '', 
+       ], 
+       'team_name'  => [
+        'type'          => 'text', 
+        'label'         => esc_html__('Team Member Name', $domain), 
+        'default'         => esc_html__('Pobitro Deb', $domain),
+       ], 
+       'team_degination' => [
+         'type'         => 'text', 
+         'label'        =>  esc_html__('Team Member Degination', $domain), 
+         'default'      => esc_html__('Web Developer', $domain)  
+       ], 
+       'team_facebook' => [
+         'type'         => 'link', 
+         'label'        =>  esc_html__('Team Member Facebook', $domain), 
+         'default'      => '',
+       ], 
+       'team_twitter' => [
+         'type'         => 'link', 
+         'label'        =>  esc_html__('Team Member Twitter', $domain), 
+         'default'      => '',
+       ], 
+       'team_instagram' => [
+         'type'         => 'link', 
+         'label'        =>  esc_html__('Team Member Instagram', $domain), 
+         'default'      => '',
+       ], 
+              
+    ]
+]); 

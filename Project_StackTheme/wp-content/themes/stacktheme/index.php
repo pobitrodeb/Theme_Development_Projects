@@ -140,99 +140,62 @@
                     </p>
                   </div>
                   <div class="row">
-
-                    <div class="col-sm-6 col-md-6 col-lg-3">
-                      <!-- Team Item Starts -->
-                      <div class="team-item text-center wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="team-img">
-                          <img class="img-fluid" src="<?php echo get_template_directory_uri();?>/assets/img/team/team-01.png" alt="">
-                          <div class="team-overlay">
-                            <div class="overlay-social-icon text-center">
-                              <ul class="social-icons">
-                                <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="info-text">
-                          <h3><a href="#">David Smith</a></h3>
-                          <p>Chief Operating Officer</p>
-                        </div>
-                      </div>
-                      <!-- Team Item Ends -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-6 col-lg-3">
-                      <!-- Team Item Starts -->
-                      <div class="team-item text-center wow fadeInRight" data-wow-delay="0.6s">
-                        <div class="team-img">
-                          <img class="img-fluid" src="<?php echo get_template_directory_uri();?>/assets/img/team/team-02.png" alt="">
-                          <div class="team-overlay">
-                            <div class="overlay-social-icon text-center">
-                              <ul class="social-icons">
-                                <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="info-text">
-                          <h3><a href="#">Eric Peterson</a></h3>
-                          <p>Product Designer</p>
-                        </div>
-                      </div>
-                      <!-- Team Item Ends -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-6 col-lg-3">
-                      <!-- Team Item Starts -->
-                      <div class="team-item text-center wow fadeInRight" data-wow-delay="0.9s">
-                        <div class="team-img">
-                          <img class="img-fluid" src="<?php echo get_template_directory_uri();?>/assets/img/team/team-03.png" alt="">
-                          <div class="team-overlay">
-                            <div class="overlay-social-icon text-center">
-                              <ul class="social-icons">
-                                <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="info-text">
-                          <h3><a href="#">Durwin Babb</a></h3>
-                          <p>Lead Designer</p>
-                        </div>
-                      </div>
-                      <!-- Team Item Ends -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-6 col-lg-3">
-                      <!-- Team Item Starts -->
-                      <div class="team-item text-center wow fadeInRight" data-wow-delay="1.2s">
-                        <div class="team-img">
-                          <img class="img-fluid" src="<?php echo get_template_directory_uri();?>/assets/img/team/team-04.png" alt="">
-                          <div class="team-overlay">
-                            <div class="overlay-social-icon text-center">
-                              <ul class="social-icons">
-                                <li><a href="#"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="info-text">
-                          <h3><a href="#">Marijn Otte</a></h3>
-                          <p>Front-end Developer</p>
-                        </div>
-                      </div>
-                      <!-- Team Item Ends -->
-                    </div>
                     
+                    <?php
+                      if ($teams = get_theme_mod('team_member_repeater')) {
+                          foreach ($teams as $team) {
+                              ?> 
+                                  <div class="col-sm-6 col-md-6 col-lg-3">
+                                    <!-- Team Item Starts -->
+                                    <div class="team-item text-center wow fadeInRight" data-wow-delay="0.3s">
+                                      <div class="team-img">
+                                      <img class="img-fluid" src="<?php echo get_template_directory_uri();?>/assets/img/team/team-02.png" alt="">
+                                        <div class="team-overlay">
+                                          <div class="overlay-social-icon text-center">
+                                            <ul class="social-icons">
+                                             <?php
+                                                if($team['team_facebook']){
+                                                  ?>
+                                                   <li><a href="<?php echo $team['team_facebook']?>"><i class="lni-facebook-filled" aria-hidden="true"></i></a></li>
+                                                  <?php
+                                                }
+                                             ?>
+                                              <?php
+                                              if($team['team_twitter']){
+                                                ?>
+                                                <li><a href="<?php echo $team['team_twitter']?>"><i class="lni-twitter-filled" aria-hidden="true"></i></a></li>
+                                                <?php
+                                              }
+                                              ?>
+                                              <?php
+                                              if($team['team_instagram']){
+                                                ?>
+                                                <li><a href="<?php echo $team['team_instagram']?>"><i class="lni-instagram-filled" aria-hidden="true"></i></a></li>
+                                                <?php
+                                              }
+                                              ?>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="info-text">
+                                        <h3><a href="#"><?php echo $team['team_name']; ?></a></h3>
+                                        <?php
+                                          if($team['team_degination']){
+                                            ?>
+                                              <p><?php echo $team['team_degination']; ?></p>
+                                            <?php
+                                          }
+                                        ?>
+                                        
+                                      </div>
+                                    </div>
+                                    <!-- Team Item Ends -->
+                                  </div>
+                              <?php
+                          }
+                      }
+                    ?>
                   </div>
                 </div>
               </section>
