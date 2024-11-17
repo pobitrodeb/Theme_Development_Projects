@@ -165,7 +165,7 @@
                                     <div class="content-box overlay-item">
                                         <div class="inner-box">
                                             <div class="image-box">
-                                            <figure class="image"><img src="<?php echo get_template_directory_uri(); ?>/images/home4/6.jpg" alt=""></figure>
+                                            <figure class="image"><img src="<?php the_post_thumbnail_url(); ?>" alt=""></figure>
                                                 <div class="overlay-box">
                                                     <div class="overlay-inner">
                                                         <div class="content">
