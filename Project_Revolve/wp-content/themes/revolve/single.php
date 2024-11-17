@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-9 col-sm-12 col-xs-12 content-side">
                 <div class="blog-details-content">
-                    <figure><img src="<?php echo get_template_directory_uri(); ?>/images/news/1.jpg" alt=""></figure>
+                    <figure><img src="<?php the_post_thumbnail_url(); ?>" alt=""></figure>
                     <div class="blog-content-one sp-three">
                         <div class="top-content centred">
                             <div class="meta-text"><?php the_category();?> </div>
@@ -37,92 +37,24 @@
                         </ul>
                     </div>
                     <div class="related-post centred">
-                        <div class="title-text-two">RELATED POSTS</div>
+                      
                         <div class="carousel-style-four nav-style-none dots-style-one">
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/2.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Travel</a></div>
-                                    <div class="title"><h6><a href="post2.html">Love Boat soon will be making another run</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/3.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Lifestyle</a></div>
-                                    <div class="title"><h6><a href="post2.html">Call him flipper flipper faster than lightning</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/4.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Fashion</a></div>
-                                    <div class="title"><h6><a href="post2.html">East side to a deluxe apartment in the sky</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/2.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Travel</a></div>
-                                    <div class="title"><h6><a href="post2.html">Love Boat soon will be making another run</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/3.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Lifestyle</a></div>
-                                    <div class="title"><h6><a href="post2.html">Call him flipper flipper faster than lightning</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/4.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Fashion</a></div>
-                                    <div class="title"><h6><a href="post2.html">East side to a deluxe apartment in the sky</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/2.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Travel</a></div>
-                                    <div class="title"><h6><a href="post2.html">Love Boat soon will be making another run</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/3.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Lifestyle</a></div>
-                                    <div class="title"><h6><a href="post2.html">Call him flipper flipper faster than lightning</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/4.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Fashion</a></div>
-                                    <div class="title"><h6><a href="post2.html">East side to a deluxe apartment in the sky</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/2.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Travel</a></div>
-                                    <div class="title"><h6><a href="post2.html">Love Boat soon will be making another run</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/3.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Lifestyle</a></div>
-                                    <div class="title"><h6><a href="post2.html">Call him flipper flipper faster than lightning</a></h6></div>
-                                </div>
-                            </div>
-                            <div class="carousel-style-one">
-                                <figure><img src="images/news/4.jpg" alt=""></figure>
-                                <div class="lower-content">
-                                    <div class="meta-text"><a href="#">Fashion</a></div>
-                                    <div class="title"><h6><a href="post2.html">East side to a deluxe apartment in the sky</a></h6></div>
-                                </div>
-                            </div>
+                            <?php 
+                                if($posts = get_field('posts')){
+                                    foreach($posts as $post){
+                                        ?> 
+                                          <div class="title-text-two">RELATED POSTS</div>
+                                        <div class="carousel-style-one">
+                                            <figure><img src="<?php the_post_thumbnail_url(); ?>" alt=""></figure>
+                                            <div class="lower-content">
+                                                <div class="meta-text"><a href="#"><?php the_category(); ?> </a></div>
+                                                <div class="title"><h6><a href="<?php the_permalink( ); ?>"><?php the_title(); ?></a></h6></div>
+                                            </div>
+                                        </div>
+                                        <?php
+                                    }
+                                }
+                            ?> 
                         </div>
                     </div>
                     <div class="comment-area">

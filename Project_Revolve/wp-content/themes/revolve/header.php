@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="logo-box centred">
-                            <a href="index.html"><figure><img src="<?php echo get_template_directory_uri()?>/images/logo/logo1.png" alt=""></figure></a>
+                            <a href="<?php echo site_url();?>"><figure><img src="<?php echo get_template_directory_uri()?>/images/logo/logo1.png" alt=""></figure></a>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12">
