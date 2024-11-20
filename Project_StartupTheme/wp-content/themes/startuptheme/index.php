@@ -130,6 +130,8 @@
 
     <?php get_template_part('template-parts/content', 'services');?>
 
+    <?php get_template_part('template-parts/content', 'pricing');?>
+
     <?php get_template_part('template-parts/content', 'quote');?>
 
     <?php get_template_part('template-parts/content', 'testimonial');?>
