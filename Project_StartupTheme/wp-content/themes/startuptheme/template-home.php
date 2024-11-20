@@ -10,7 +10,6 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
     <?php wp_head();?> 
 </head>
 
@@ -49,7 +48,7 @@
     <!-- Navbar & Carousel Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="<?php echo site_url();?> " class="navbar-brand p-0">
+            <a href="index.html" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>Startup</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -84,6 +83,7 @@
 
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
+
                 <div class="carousel-item active">
                     <img class="w-100" src="<?php echo get_template_directory_uri()?>/assets/img/carousel-1.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -95,6 +95,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="carousel-item">
                     <img class="w-100" src="<?php echo get_template_directory_uri()?>/assets/img/carousel-2.jpg" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
@@ -106,6 +107,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
                 data-bs-slide="prev">
@@ -682,6 +684,7 @@
             </div>
         </div>
     </div>
-    <!-- Blog End -->
+    <!-- Blog Start -->
+
 
 <?php get_footer();?> 
