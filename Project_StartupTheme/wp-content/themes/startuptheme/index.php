@@ -11,19 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/css/animate.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="assets/css/style.css" rel="stylesheet">
     <?php wp_head();?> 
 </head>
 
@@ -808,17 +795,6 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-
-    <!-- JavaScript Libraries -->
-    <script src="assets/js/jquery-3.4.1.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/counterup.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="assets/js/main.js"></script>
     <?php wp_footer(); ?>
 </body>
 
