@@ -57,28 +57,33 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
+                    <!-- Dynamic Menu Bar but now shwo. Need CSS changed -->
+                    <!-- <?php 
+                            wp_nav_menu(array(
+                                    'theme_location'    => 'primary_menu',
+                            ));
+                    // ?>  -->
                     <ul>
                         <li><a href="<?php site_url();?> " class="nav-item nav-link">Home</a></li>
-                        <li><a href="about.html" class="nav-item nav-link">About</a></li>
-                        <li><a href="service.html" class="nav-item nav-link">Services</a></li>
-                        <li><a href="#" class="nav-item nav-link">Blog</a>
-                            <ul>
+                        <li><a href="http://localhost/Theme_Development_Projects/Project_StartupTheme/index.php/about/" class="nav-item nav-link">About</a></li>
+                        <li><a href="http://localhost/Theme_Development_Projects/Project_StartupTheme/index.php/services/" class="nav-item nav-link">Services</a></li>
+                        <li><a href="http://localhost/Theme_Development_Projects/Project_StartupTheme/index.php/blog/" class="nav-item nav-link">Blog</a>
+                            <!-- <ul>
                                 <li><a href="blog.html">Blog Grid</a></li>
                                 <li><a href="detail.html">Blog Detail</a></li>
-                            </ul>
+                            </ul> -->
                         </li>
                         <li><a href="#" class="nav-item nav-link">Pages</a>
                             <ul>
-                                <li><a href="price.html">Pricing Plan</a></li>
-                                <li><a href="feature.html">Our features</a></li>
-                                <li><a href="team.html">Team Members</a></li>
-                                <li><a href="testimonial.html">Testimonial</a></li>
-                                <li><a href="quote.html">Free Quote</a></li>
+                                <li><a href="http://localhost/Theme_Development_Projects/Project_StartupTheme/index.php/price/">Pricing Plan</a></li>
+                                <li><a href="http://localhost/Theme_Development_Projects/Project_StartupTheme/index.php/feature">Our features</a></li>
+                                <li><a href="http://localhost/Theme_Development_Projects/Project_StartupTheme/index.php/team">Team Members</a></li>
+                                <li><a href="http://localhost/Theme_Development_Projects/Project_StartupTheme/index.php/testimonial">Testimonial</a></li>
+                                <li><a href="http://localhost/Theme_Development_Projects/Project_StartupTheme/index.php/price/quote">Free Quote</a></li>
                             </ul>
                         </li>
-                        <li><a href="contact.html" class="nav-item nav-link">Contact</a></li>
+                        <li><a href="http://localhost/Theme_Development_Projects/Project_StartupTheme/index.php/contact" class="nav-item nav-link">Contact</a></li>
                     </ul>                    
                 </div>
             </div>
         </nav>
-

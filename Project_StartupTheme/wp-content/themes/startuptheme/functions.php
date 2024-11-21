@@ -4,6 +4,10 @@ function start_theme_support(){
     load_theme_textdomain( 'startuptheme', get_template_directory() . '/languages' );
     add_theme_support('post-thumbnails'); 
 
+    register_nav_menus(array(
+        'primary_menu'  => __('Primary Menus', 'startuptheme'),
+    ));
+
 }
 
 add_action('after_setup_theme','start_theme_support'); 
