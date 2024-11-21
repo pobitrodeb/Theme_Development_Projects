@@ -60,3 +60,19 @@ function startuptheme_enqueue_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'startuptheme_enqueue_scripts' );
 
+// Custom Post Type 
+
+function statuptheme_custom_post_type(){
+
+    $args = array(
+        'label'    => __('Sliders', 'statuptheme'), 
+        'public'    => true,
+        'menu_icon' => 'dashicons-slides' 
+    ); 
+
+    register_post_type('sliders', $args); 
+
+}
+
+
+add_action('init', 'statuptheme_custom_post_type');
