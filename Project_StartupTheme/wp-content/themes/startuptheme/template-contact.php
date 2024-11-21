@@ -6,6 +6,10 @@
 ?> 
 
 
+ <!-- Start Dynamic Breadcumb  -->
+ <?php get_template_part('template-parts/content', 'breadcumb') ?>
+ <!--End Dynamic Breadcumb -->
+ 
     <!-- Contact Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">

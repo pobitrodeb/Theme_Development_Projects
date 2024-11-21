@@ -5,6 +5,9 @@
     get_header();
 ?> 
 
+ <!-- Start Dynamic Breadcumb  -->
+ <?php get_template_part('template-parts/content', 'breadcumb') ?>
+ <!--End Dynamic Breadcumb -->
 
     <!-- Blog Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
