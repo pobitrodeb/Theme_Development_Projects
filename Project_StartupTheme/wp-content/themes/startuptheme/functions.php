@@ -226,6 +226,46 @@ function statuptheme_custom_post_type(){
         );
         register_post_type('testimonials', $args);
 
+
+        // Team Members Custom Post Added 
+         $labels = array(
+            'name'                  => __( 'Teams', 'Post type general name', 'startuptheme' ),
+            'singular_name'         => __( 'Team', 'Post type singular name', 'startuptheme' ),
+            'menu_name'             => __( 'Teams', 'Admin Menu text', 'startuptheme' ),
+            'name_admin_bar'        => __( 'Teams', 'Add New on Toolbar', 'startuptheme' ),
+            'add_new'               => __( 'Add New', 'startuptheme' ),
+            'add_new_item'          => __( 'Add New Team', 'startuptheme' ),
+            'new_item'              => __( 'New Team', 'startuptheme' ),
+            'edit_item'             => __( 'Edit Team', 'startuptheme' ),
+            'view_item'             => __( 'View Team', 'startuptheme' ),
+            'all_items'             => __( 'All Team', 'startuptheme' ),
+            'search_items'          => __( 'Search Team', 'startuptheme' ),
+            'parent_item_colon'     => __( 'Parent Teamz:', 'startuptheme' ),
+            'not_found'             => __( 'No Team found.', 'startuptheme' ),
+            'not_found_in_trash'    => __( 'No Testimonials found in Trash.', 'startuptheme' ),
+            'featured_image'        => __( 'Team Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+            'set_featured_image'    => __( 'Set Teams image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+            'remove_featured_image' => __( 'Remove Teams image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+            
+        );  
+        $args = array(
+            'labels'             => $labels,
+            'description'        => 'Teams custom post type.',
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'rewrite'            => array( 'slug' => 'team' ),
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => 20,
+            'menu_icon'          => 'dashicons-businesswoman',   
+            'supports'           => array( 'title', 'custom-fields' ),
+        );
+        register_post_type('team', $args);
+
 }
 
 add_action('init', 'statuptheme_custom_post_type');
