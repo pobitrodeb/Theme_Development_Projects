@@ -17,7 +17,6 @@
                                 $sub_heading =  get_field('sub_heading');
                                 $slider_button_title_1 = get_field('slider_button_title_1');
                                 $slider_button_title_2 = get_field('slider_button_title_2');
-                                $slider_button_title_2 = get_field('slider_button_title_2');
                                 $slider_button_1_url = get_field('slider_button_1_url');
                                 $slider_button_2_url_ = get_field('slider_button_2_url_');
                                 ?>

@@ -60,8 +60,15 @@ function startuptheme_enqueue_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'startuptheme_enqueue_scripts' );
 
-//Register Custom Post Type 
+// Add ACF Json Data File 
+function startuptheme_acf_json_backup() {
+    return get_stylesheet_directory() . '/acf-json';
+}
+add_filter( 'acf/settings/save_json', 'startuptheme_acf_json_backup' );
 
+
+
+//Register Custom Post Type 
 function statuptheme_custom_post_type(){
 
     $labels = array(
