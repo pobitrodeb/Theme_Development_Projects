@@ -2,7 +2,7 @@
 function start_theme_support(){
     add_theme_support('title-tag');
     load_theme_textdomain( 'startuptheme', get_template_directory() . '/languages' );
-    add_theme_support('post-thumbnails', array('sliders', )); 
+    add_theme_support('post-thumbnails', array('sliders', 'testimonials', )); 
 
     register_nav_menus(array(
         'primary_menu'  => __('Primary Menus', 'startuptheme'),
@@ -184,6 +184,47 @@ function statuptheme_custom_post_type(){
             'supports'           => array( 'title', 'custom-fields' ),
         );
         register_post_type('prices', $args);
+
+        
+        
+        // Testimonial Custom Post Added 
+         $labels = array(
+            'name'                  => __( 'Testimonials', 'Post type general name', 'startuptheme' ),
+            'singular_name'         => __( 'Testimonial', 'Post type singular name', 'startuptheme' ),
+            'menu_name'             => __( 'Testimonials', 'Admin Menu text', 'startuptheme' ),
+            'name_admin_bar'        => __( 'Testimonials', 'Add New on Toolbar', 'startuptheme' ),
+            'add_new'               => __( 'Add New', 'startuptheme' ),
+            'add_new_item'          => __( 'Add New Testimonial', 'startuptheme' ),
+            'new_item'              => __( 'New Testimonial', 'startuptheme' ),
+            'edit_item'             => __( 'Edit Testimonial', 'startuptheme' ),
+            'view_item'             => __( 'View Testimonials', 'startuptheme' ),
+            'all_items'             => __( 'All Testimonial', 'startuptheme' ),
+            'search_items'          => __( 'Search Testimonials', 'startuptheme' ),
+            'parent_item_colon'     => __( 'Parent Testimonials:', 'startuptheme' ),
+            'not_found'             => __( 'No Testimonials found.', 'startuptheme' ),
+            'not_found_in_trash'    => __( 'No Testimonials found in Trash.', 'startuptheme' ),
+            'featured_image'        => __( 'Testimonials Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+            'set_featured_image'    => __( 'Set Testimonials image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+            'remove_featured_image' => __( 'Remove Testimonials image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+            
+        );  
+        $args = array(
+            'labels'             => $labels,
+            'description'        => 'Testimonials custom post type.',
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'rewrite'            => array( 'slug' => 'testimonials' ),
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => 20,
+            'menu_icon'          => 'dashicons-testimonial',   
+            'supports'           => array( 'title', 'custom-fields' ),
+        );
+        register_post_type('testimonials', $args);
 
 }
 
