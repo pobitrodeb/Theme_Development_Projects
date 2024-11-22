@@ -145,6 +145,46 @@ function statuptheme_custom_post_type(){
         'supports'           => array( 'title', 'editor', 'custom-fields' ),
     );
     register_post_type('services', $args);
+
+         // Price Custom Post Added 
+         $labels = array(
+            'name'                  => __( 'Prices', 'Post type general name', 'startuptheme' ),
+            'singular_name'         => __( 'Price', 'Post type singular name', 'startuptheme' ),
+            'menu_name'             => __( 'Prices', 'Admin Menu text', 'startuptheme' ),
+            'name_admin_bar'        => __( 'Prices', 'Add New on Toolbar', 'startuptheme' ),
+            'add_new'               => __( 'Add New', 'startuptheme' ),
+            'add_new_item'          => __( 'Add New Price', 'startuptheme' ),
+            'new_item'              => __( 'New Price', 'startuptheme' ),
+            'edit_item'             => __( 'Edit Price', 'startuptheme' ),
+            'view_item'             => __( 'View Prices', 'startuptheme' ),
+            'all_items'             => __( 'All Price', 'startuptheme' ),
+            'search_items'          => __( 'Search Prices', 'startuptheme' ),
+            'parent_item_colon'     => __( 'Parent Prices:', 'startuptheme' ),
+            'not_found'             => __( 'No Prices found.', 'startuptheme' ),
+            'not_found_in_trash'    => __( 'No Prices found in Trash.', 'startuptheme' ),
+            'featured_image'        => __( 'Prices Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+            'set_featured_image'    => __( 'Set Prices image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+            'remove_featured_image' => __( 'Remove Prices image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+            
+        );  
+        $args = array(
+            'labels'             => $labels,
+            'description'        => 'Prices custom post type.',
+            'public'             => true,
+            'publicly_queryable' => true,
+            'show_ui'            => true,
+            'show_in_menu'       => true,
+            'query_var'          => true,
+            'rewrite'            => array( 'slug' => 'prices' ),
+            'capability_type'    => 'post',
+            'has_archive'        => true,
+            'hierarchical'       => false,
+            'menu_position'      => 20,
+            'menu_icon'          => 'dashicons-admin-users',   
+            'supports'           => array( 'title', 'custom-fields' ),
+        );
+        register_post_type('prices', $args);
+
 }
 
 add_action('init', 'statuptheme_custom_post_type');
