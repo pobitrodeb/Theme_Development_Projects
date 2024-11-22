@@ -2,7 +2,7 @@
 function start_theme_support(){
     add_theme_support('title-tag');
     load_theme_textdomain( 'startuptheme', get_template_directory() . '/languages' );
-    add_theme_support('post-thumbnails'); 
+    add_theme_support('post-thumbnails', array('sliders', )); 
 
     register_nav_menus(array(
         'primary_menu'  => __('Primary Menus', 'startuptheme'),
@@ -60,19 +60,47 @@ function startuptheme_enqueue_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'startuptheme_enqueue_scripts' );
 
-// Custom Post Type 
+//Register Custom Post Type 
 
 function statuptheme_custom_post_type(){
 
+    $labels = array(
+        'name'                  => _x( 'Sliders', 'Post type general name', 'startuptheme' ),
+        'singular_name'         => _x( 'Slider', 'Post type singular name', 'startuptheme' ),
+        'menu_name'             => _x( 'Sliders', 'Admin Menu text', 'startuptheme' ),
+        'name_admin_bar'        => _x( 'Sliders', 'Add New on Toolbar', 'startuptheme' ),
+        'add_new'               => __( 'Add New', 'startuptheme' ),
+        'add_new_item'          => __( 'Add New Slider', 'startuptheme' ),
+        'new_item'              => __( 'New Slider', 'startuptheme' ),
+        'edit_item'             => __( 'Edit Slider', 'startuptheme' ),
+        'view_item'             => __( 'View Slider', 'startuptheme' ),
+        'all_items'             => __( 'All Sliders', 'startuptheme' ),
+        'search_items'          => __( 'Search Sliders', 'startuptheme' ),
+        'parent_item_colon'     => __( 'Parent Sliders:', 'startuptheme' ),
+        'not_found'             => __( 'No Sliders found.', 'startuptheme' ),
+        'not_found_in_trash'    => __( 'No Sliders found in Trash.', 'startuptheme' ),
+        'featured_image'        => _x( 'Slider Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+        'set_featured_image'    => _x( 'Set Slider image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+        'remove_featured_image' => _x( 'Remove Slider image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+        
+    );  
     $args = array(
-        'label'    => __('Sliders', 'statuptheme'), 
-        'public'    => true,
-        'menu_icon' => 'dashicons-slides' 
-    ); 
-
-    register_post_type('sliders', $args); 
-
+        'labels'             => $labels,
+        'description'        => 'Sliders custom post type.',
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'sliders' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-slides',   
+        'supports'           => array( 'title', 'thumbnail', 'custom-fields' ),
+    );
+    register_post_type('sliders', $args);
 }
-
 
 add_action('init', 'statuptheme_custom_post_type');
