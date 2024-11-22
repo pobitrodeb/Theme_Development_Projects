@@ -71,11 +71,12 @@ add_filter( 'acf/settings/save_json', 'startuptheme_acf_json_backup' );
 //Register Custom Post Type 
 function statuptheme_custom_post_type(){
 
+    // Slider Custom Post Added 
     $labels = array(
-        'name'                  => _x( 'Sliders', 'Post type general name', 'startuptheme' ),
-        'singular_name'         => _x( 'Slider', 'Post type singular name', 'startuptheme' ),
-        'menu_name'             => _x( 'Sliders', 'Admin Menu text', 'startuptheme' ),
-        'name_admin_bar'        => _x( 'Sliders', 'Add New on Toolbar', 'startuptheme' ),
+        'name'                  => __( 'Sliders', 'Post type general name', 'startuptheme' ),
+        'singular_name'         => __( 'Slider', 'Post type singular name', 'startuptheme' ),
+        'menu_name'             => __( 'Sliders', 'Admin Menu text', 'startuptheme' ),
+        'name_admin_bar'        => __( 'Sliders', 'Add New on Toolbar', 'startuptheme' ),
         'add_new'               => __( 'Add New', 'startuptheme' ),
         'add_new_item'          => __( 'Add New Slider', 'startuptheme' ),
         'new_item'              => __( 'New Slider', 'startuptheme' ),
@@ -85,10 +86,7 @@ function statuptheme_custom_post_type(){
         'search_items'          => __( 'Search Sliders', 'startuptheme' ),
         'parent_item_colon'     => __( 'Parent Sliders:', 'startuptheme' ),
         'not_found'             => __( 'No Sliders found.', 'startuptheme' ),
-        'not_found_in_trash'    => __( 'No Sliders found in Trash.', 'startuptheme' ),
-        'featured_image'        => _x( 'Slider Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'startuptheme' ),
-        'set_featured_image'    => _x( 'Set Slider image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
-        'remove_featured_image' => _x( 'Remove Slider image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+        
         
     );  
     $args = array(
@@ -108,6 +106,45 @@ function statuptheme_custom_post_type(){
         'supports'           => array( 'title', 'thumbnail', 'custom-fields' ),
     );
     register_post_type('sliders', $args);
+
+     // Services Custom Post Added 
+     $labels = array(
+        'name'                  => __( 'Services', 'Post type general name', 'startuptheme' ),
+        'singular_name'         => __( 'Service', 'Post type singular name', 'startuptheme' ),
+        'menu_name'             => __( 'Services', 'Admin Menu text', 'startuptheme' ),
+        'name_admin_bar'        => __( 'Services', 'Add New on Toolbar', 'startuptheme' ),
+        'add_new'               => __( 'Add New', 'startuptheme' ),
+        'add_new_item'          => __( 'Add New Service', 'startuptheme' ),
+        'new_item'              => __( 'New Service', 'startuptheme' ),
+        'edit_item'             => __( 'Edit Service', 'startuptheme' ),
+        'view_item'             => __( 'View Services', 'startuptheme' ),
+        'all_items'             => __( 'All Services', 'startuptheme' ),
+        'search_items'          => __( 'Search Services', 'startuptheme' ),
+        'parent_item_colon'     => __( 'Parent Services:', 'startuptheme' ),
+        'not_found'             => __( 'No Services found.', 'startuptheme' ),
+        'not_found_in_trash'    => __( 'No Services found in Trash.', 'startuptheme' ),
+        'featured_image'        => __( 'Services Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+        'set_featured_image'    => __( 'Set Services image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+        'remove_featured_image' => __( 'Remove Services image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'startuptheme' ),
+        
+    );  
+    $args = array(
+        'labels'             => $labels,
+        'description'        => 'Services custom post type.',
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'services' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-admin-generic',   
+        'supports'           => array( 'title', 'editor', 'custom-fields' ),
+    );
+    register_post_type('services', $args);
 }
 
 add_action('init', 'statuptheme_custom_post_type');
