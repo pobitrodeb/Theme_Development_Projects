@@ -1,3 +1,9 @@
+                    <?php if ( is_active_sidebar( 'main-sidebar' ) ) { ?>
+                        <ul id="sidebar">
+                            <?php dynamic_sidebar('main-sidebar'); ?>
+                        </ul>
+                    <?php } ?>
+
                     <!-- Search Form Start -->
                     <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
                         <div class="input-group">
