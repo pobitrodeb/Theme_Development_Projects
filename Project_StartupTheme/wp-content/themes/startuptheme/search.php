@@ -1,22 +1,18 @@
 <?php  get_header();?> 
 
 
-        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+<div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
             <div class="row py-5">
                 <div class="col-12 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-4 text-white animated zoomIn"><?php echo the_archive_title(); ?></h1>
-                    <a href="<?php echo site_url();?> " class="h5 text-white">Home</a>
-                    <i class="far fa-circle text-white px-2"></i>
-                    <a href="" class="h5 text-white"><?php echo the_archive_title(); ?></a>
+                    <h1 class="display-4 text-white animated zoomIn"><?php printf( __( 'Search Results for: %s', 'yourtheme' ), get_search_query() ); ?></h1>
                 </div>
             </div>
         </div>
     </div>
-
-
+    <!-- Navbar End -->
 
     <!-- Blog Start -->
-        <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="container py-5">
                     <div class="row g-5">
                         <!-- Blog list Start -->
@@ -50,6 +46,8 @@
                                             <?php
                                         }
                                         wp_reset_postdata();
+                                    } else {
+                                        echo "Not Match This Keywords";
                                     }
                                 ?>
                             </div>
@@ -66,6 +64,5 @@
 
         </div>
     <!-- Blog End -->
-
 
 <?php  get_footer();?> 
