@@ -14,7 +14,7 @@
                     <!-- Search Form End -->
     
                     <!-- Category Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                    <!-- <div class="mb-5 wow slideInUp" data-wow-delay="0.1s"> -->
                         <!-- <div class="section-title section-title-sm position-relative pb-3 mb-4">
                             <h3 class="mb-0">Categories</h3>
                         </div> -->
@@ -25,11 +25,11 @@
                             <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Keyword Research</a>
                             <a class="h5 fw-semi-bold bg-light rounded py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>Email Marketing</a>
                         </div> -->
-                    </div>
+                    <!-- </div> -->
                     <!-- Category End -->
     
                     <!-- Recent Post Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                    <!-- <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
                             <h3 class="mb-0">Recent Post</h3>
                         </div>
@@ -63,7 +63,7 @@
                             <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">Lorem ipsum dolor sit amet adipis elit
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Recent Post End -->
     
                     <!-- Image Start -->
