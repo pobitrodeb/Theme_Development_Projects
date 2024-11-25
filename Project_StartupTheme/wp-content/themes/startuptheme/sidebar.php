@@ -67,13 +67,13 @@
                     <!-- Recent Post End -->
     
                     <!-- Image Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                    <!-- <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
                         <img src="<?php echo get_template_directory_uri()?>/assets/img/blog-1.jpg" alt="" class="img-fluid rounded">
-                    </div>
+                    </div> -->
                     <!-- Image End -->
     
                     <!-- Tags Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
+                    <!-- <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
                             <h3 class="mb-0">Tag Cloud</h3>
                         </div>
@@ -91,7 +91,7 @@
                             <a href="" class="btn btn-light m-1">Writing</a>
                             <a href="" class="btn btn-light m-1">Consulting</a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Tags End -->
     
                     <!-- Plain Text Start -->
