@@ -877,9 +877,27 @@ class startuptheme_footer_address_widget extends WP_Widget {
                                     <?php
                                 }
                                ?>
-                                <a class="btn btn-primary btn-square me-2" href="<?php echo $footer_twitter_url;?>"><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square me-2" href="<?php echo $footer_linkedIn_url;?>"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                                <a class="btn btn-primary btn-square" href="<?php echo $footer_instagram_url;?>"><i class="fab fa-instagram fw-normal"></i></a>
+                           <?php
+                                if($footer_twitter_url){
+                                    ?>
+                                        <a class="btn btn-primary btn-square me-2" href="<?php echo $footer_twitter_url;?>"><i class="fab fa-facebook-f fw-normal"></i></a>
+                                    <?php
+                                }
+                            ?>
+                            <?php
+                                if($footer_linkedIn_url){
+                                    ?>
+                                    <a class="btn btn-primary btn-square me-2" href="<?php echo $footer_linkedIn_url;?>"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                                    <?php
+                                }
+                            ?>
+                            <?php
+                            if($footer_instagram_url){
+                                ?>
+                                 <a class="btn btn-primary btn-square" href="<?php echo $footer_instagram_url;?>"><i class="fab fa-instagram fw-normal"></i></a>
+                                <?php
+                            }
+                            ?>   
                             </div>
             </div>
         <?php
