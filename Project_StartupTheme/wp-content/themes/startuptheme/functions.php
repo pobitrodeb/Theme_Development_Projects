@@ -331,3 +331,19 @@ function startuptheme_change_submit_button_text($defaults){
 }
 
 add_filter('comment_form_defaults', 'startuptheme_change_submit_button_text');
+
+
+
+
+// Theme Option With ACF 
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+
+}
