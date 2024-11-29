@@ -33,6 +33,9 @@ function startuptheme_enqueue_scripts(){
     // Template Stylesheet
     wp_enqueue_style( 'startuptheme-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0', 'all' );
 
+     // Enqueue the main theme stylesheet
+     wp_enqueue_style('startuptheme-style-main', get_stylesheet_uri(), array(), wp_get_theme()->get('1.0.0'));
+
     /**
      * Enqueue JavaScript files for Startup Theme.
      */
@@ -293,3 +296,38 @@ include_once get_template_directory(). '/inc/widgets/plain_text-widget.php';
 // Create Footer Widget
 include_once get_template_directory(). '/inc/widgets/footer_address-widget.php';
 
+
+// Single Blog Comment Form 
+function startuptheme_move_comment_field($fields){
+    $comment_field = $fields['comment']; 
+    unset($fields ['comment']); 
+    $fields['comment'] = $comment_field; 
+    return $fields;
+}
+add_filter('comment_form_fields', 'startuptheme_move_comment_field'); 
+
+function startuptheme_comment_form_fields( $fields ) {
+	foreach( $fields as &$field ) {
+		$field = str_replace( 'id="author"', 'id="author" placeholder="Your Name*"', $field );
+		$field = str_replace( 'id="email"', 'id="email" placeholder="Your Email*"', $field );
+		$field = str_replace( 'id="url"', 'id="url" placeholder="Website"', $field );
+	}
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'startuptheme_comment_form_fields' );
+
+
+function startuptheme_comment_textarea_placeholder($args){
+    $args['comment_field']          = str_replace('textarea', 'textarea placeholder ="Comment"', $args['comment_field']); 
+    return $args;
+}
+add_filter('comment_form_defaults', 'startuptheme_comment_textarea_placeholder'); 
+
+
+
+function startuptheme_change_submit_button_text($defaults){
+    $defaults['label_submit']   = 'Leave Your Comment';
+    return $defaults; 
+}
+
+add_filter('comment_form_defaults', 'startuptheme_change_submit_button_text');
